@@ -20,12 +20,10 @@ export function MainLayout() {
           <Link to="/" style={{ color: '#FACC15', textDecoration: 'none', fontSize: '1.8rem', fontWeight: 'bold', fontFamily: 'var(--font-title)', fontStyle: 'italic' }}>Editora da Graça</Link>
           <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center', fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase' }}>
             <Link to="/" className="nav-link">Home</Link>
-            <div className="nav-links">
-              <Link to="/#livros" className="nav-link">Coleção</Link>
-              <Link to="/autor" className="nav-link">O Autor</Link>
-              <Link to="/blog" className="nav-link">Blog</Link>
-            </div>
-            <Link to="/contato" className="nav-link">Contato</Link>
+            <Link to="/#livros" className="nav-link">Coleção</Link>
+            <Link to="/autor" className="nav-link">O Autor</Link>
+            <Link to="/blog" className="nav-link">Blog</Link>
+            <Link to="/contato" className="nav-link" style={{ border: '2px solid #111', padding: '0.4rem 1.2rem', borderRadius: '4px' }}>Contato</Link>
           </nav>
         </div>
       </header>
