@@ -44,6 +44,6 @@ export function LandingPage({ config }: { config: any }) {
       <FAQSection config={config} />
       <CrossSellSection />
       <FooterSection config={config} />
-    </>
+    </div>
   );
 }
