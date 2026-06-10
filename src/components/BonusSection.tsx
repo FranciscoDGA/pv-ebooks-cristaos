@@ -1,14 +1,16 @@
+
 export function BonusSection({ config }: { config: any }) {
-  const { bonuses } = config;
+  const icons = ["📖", "🙏", "📚", "🎓"];
   return (
-    <section className="section-padding bonus-section">
+    <section id="bonus" className="section-padding bg-gray">
       <div className="container">
-        <h2 className="bonus-title">B�nus Exclusivos</h2>
+        <h2 className="section-title">Bônus Exclusivos</h2>
         <div className="bonus-grid">
-          {bonuses.map((bonus: any, idx: number) => (
-            <div key={idx} className="bonus-card">
-              <h3>{bonus.title}</h3>
-              <p>Valor: <span className="bonus-value">{bonus.value}</span> (Incluso hoje)</p>
+          {config.bonuses.map((bonus: any, idx: number) => (
+            <div className="bonus-card" key={idx}>
+              <div className="bonus-icon">{icons[idx % icons.length]}</div>
+              <h3 className="bonus-title">{bonus.title}</h3>
+              <p>Incluso gratuitamente</p>
             </div>
           ))}
         </div>

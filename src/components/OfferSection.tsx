@@ -1,19 +1,22 @@
+
 export function OfferSection({ config }: { config: any }) {
   const { offer } = config;
   return (
-    <section className="section-padding offer-section">
+    <section id="offer" className="offer-section">
       <div className="container">
         <div className="offer-box">
-          <h2>Adquira agora mesmo</h2>
-          <p className="offer-old-price">De {offer.oldPrice}</p>
-          <div className="offer-price">{offer.price}</div>
-          <p className="offer-methods">Pagamento via {offer.paymentMethods}</p>
-          <a href={offer.checkoutLink} className="btn btn-primary" style={{width: '100%'}}>Quero Come�ar a Leitura</a>
-          <div className="offer-guarantee">
-            <span>?? Ambiente seguro</span>
-            <span>�</span>
-            <span>Garantia de {offer.guaranteeDays} dias</span>
+          <h2 className="offer-title">Adquira agora</h2>
+          <div className="price-container">
+            <span className="old-price">{offer.oldPrice}</span>
+            <span className="new-price">{offer.price}</span>
+            <span className="installments">ou 3x R$6,63</span>
           </div>
+          <ul className="offer-guarantees">
+            <li><span className="check-icon">✓</span> Download imediato</li>
+            <li><span className="check-icon">✓</span> Acesso vitalício</li>
+            <li><span className="check-icon">✓</span> Leitura no celular, tablet e computador</li>
+          </ul>
+          <a href={offer.checkoutLink} className="buy-button-large">Quero Começar a Leitura</a>
         </div>
       </div>
     </section>

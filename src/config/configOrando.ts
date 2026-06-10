@@ -51,7 +51,7 @@ export const configOrando = {
     "Não é orar mais alto, nem mais bonito, nem mais demorado. É orar mais inteiro."
   ],
   author: {
-    photo: "/author_avatar.png",
+    photo: "/author_pastoral.png",
     name: "Pr. Francisco Gomes",
     bio: "Pastor, conferencista e ensinador da Palavra. Vice-Presidente do MAJEV, tem o chamado de tornar a vida com Deus simples e prática, ensinando o povo a sair da teoria e entrar na comunhão diária."
   },
@@ -85,5 +85,28 @@ export const configOrando = {
     contactLink: "#",
     copyright: `© ${new Date().getFullYear()} Francisco Gomes. Todos os direitos reservados.`,
     disclaimer: "Este produto é comercializado com apoio das principais plataformas de pagamento."
-  }
+  },
+previewPages: ["/sample_page_1.png", "/sample_page_2.png", "/sample_page_3.png", "/sample_page_4.png", "/sample_page_5.png"],
+  isForYou: [
+    "Deseja crescer espiritualmente.",
+    "Busca uma leitura profunda e acessível.",
+    "Gosta de estudos bíblicos.",
+    "Quer aplicar a Palavra no dia a dia.",
+    "Procura um material para leitura devocional."
+  ],
+  amazonStyle: {
+    title: "Uma leitura para ser feita devagar.",
+    description: "Escrito em linguagem simples, este livro foi pensado para crianças compreenderem e adultos sentirem. Cada capítulo foi desenvolvido para conduzir o leitor da reflexão à prática, da culpa à graça e da informação à transformação.",
+    image: "/open_book_mockup.png"
+  },
+  collection: {
+    title: "COLEÇÃO A CRUZ E O CORAÇÃO HUMANO",
+    books: [
+      { title: "Quem Ainda Chora?", path: "/quem-ainda-chora" },
+      { title: "Orando com o Corpo, a Alma e o Espírito", path: "/orando" },
+      { title: "Quando Não Há Rei", path: "/quando-nao-ha-rei" },
+      { title: "Somos Todos Jerusalém", path: "/somos-todos-jerusalem" }
+    ]
+  },
+
 };
