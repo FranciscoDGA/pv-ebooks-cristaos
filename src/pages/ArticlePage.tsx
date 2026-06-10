@@ -1,5 +1,6 @@
 
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import { blogArticles } from '../config/blogConfig';
 
@@ -11,6 +12,10 @@ export function ArticlePage() {
 
   return (
     <div className="section-padding" style={{ backgroundColor: '#fff' }}>
+      <Helmet>
+        <title>{article.title} | Blog O Chamado da Graça</title>
+        <meta name="description" content={article.excerpt} />
+      </Helmet>
       <div className="container" style={{ maxWidth: '700px' }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <span style={{ color: '#1D4ED8', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>{article.category}</span>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { blogArticles } from '../config/blogConfig';
 
 export function HomePage() {
@@ -11,6 +12,10 @@ export function HomePage() {
 
   return (
     <div>
+      <Helmet>
+        <title>O Chamado da Graça | Editora Cristã Digital</title>
+        <meta name="description" content="Uma biblioteca digital cristã para quem deseja ler devagar, pensar profundamente e caminhar mais perto de Deus." />
+      </Helmet>
       {/* Hero Section */}
       <section style={{ 
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url("/home_hero_bg.png")', 

@@ -1,3 +1,5 @@
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { CollectionSection } from './CollectionSection';
 import { HeroSection } from './HeroSection';
 import { QuoteSection } from './QuoteSection';
@@ -20,7 +22,11 @@ export function LandingPage({ config }: { config: any }) {
   if (!config) return <div style={{textAlign:'center', padding: '100px'}}>Página não encontrada</div>;
 
   return (
-    <>
+    <div className="font-sans">
+      <Helmet>
+        <title>{config.title} | O Chamado da Graça</title>
+        <meta name="description" content={config.subtitle} />
+      </Helmet>
       <CollectionSection config={config} />
       <HeroSection config={config} />
       <QuoteSection config={config} />

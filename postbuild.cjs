@@ -3,7 +3,6 @@ const path = require('path');
 
 const distDir = path.join(__dirname, 'dist');
 
-// If build hasn't run, exit safely
 if (!fs.existsSync(distDir)) {
   console.log("Pasta dist não encontrada, pulando postbuild.");
   process.exit(0);
@@ -11,7 +10,6 @@ if (!fs.existsSync(distDir)) {
 
 const baseHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
 
-// The routes we want to physically prerender for SEO
 const routes = [
   {
     path: '/orando',
@@ -49,25 +47,25 @@ routes.forEach(route => {
   let html = baseHtml;
   
   // Replace Title
-  html = html.replace(/<title>.*?<\/title>/g, \`<title>\${route.title}</title>\`);
-  html = html.replace(/<meta name="title" content=".*?"/g, \`<meta name="title" content="\${route.title}"\`);
-  html = html.replace(/<meta property="og:title" content=".*?"/g, \`<meta property="og:title" content="\${route.title}"\`);
-  html = html.replace(/<meta property="twitter:title" content=".*?"/g, \`<meta property="twitter:title" content="\${route.title}"\`);
+  html = html.replace(/<title>.*?<\/title>/g, '<title>' + route.title + '</title>');
+  html = html.replace(/<meta name="title" content=".*?"/g, '<meta name="title" content="' + route.title + '"');
+  html = html.replace(/<meta property="og:title" content=".*?"/g, '<meta property="og:title" content="' + route.title + '"');
+  html = html.replace(/<meta property="twitter:title" content=".*?"/g, '<meta property="twitter:title" content="' + route.title + '"');
 
   // Replace Description
-  html = html.replace(/<meta name="description" content=".*?"/g, \`<meta name="description" content="\${route.description}"\`);
-  html = html.replace(/<meta property="og:description" content=".*?"/g, \`<meta property="og:description" content="\${route.description}"\`);
-  html = html.replace(/<meta property="twitter:description" content=".*?"/g, \`<meta property="twitter:description" content="\${route.description}"\`);
+  html = html.replace(/<meta name="description" content=".*?"/g, '<meta name="description" content="' + route.description + '"');
+  html = html.replace(/<meta property="og:description" content=".*?"/g, '<meta property="og:description" content="' + route.description + '"');
+  html = html.replace(/<meta property="twitter:description" content=".*?"/g, '<meta property="twitter:description" content="' + route.description + '"');
 
   // Replace Image
-  html = html.replace(/<meta property="og:image" content=".*?"/g, \`<meta property="og:image" content="\${route.image}"\`);
-  html = html.replace(/<meta property="twitter:image" content=".*?"/g, \`<meta property="twitter:image" content="\${route.image}"\`);
+  html = html.replace(/<meta property="og:image" content=".*?"/g, '<meta property="og:image" content="' + route.image + '"');
+  html = html.replace(/<meta property="twitter:image" content=".*?"/g, '<meta property="twitter:image" content="' + route.image + '"');
   
   // Create Directory and File
-  const routeDir = path.join(distDir, route.path.substring(1)); // strip leading slash
+  const routeDir = path.join(distDir, route.path.substring(1));
   if (!fs.existsSync(routeDir)) {
     fs.mkdirSync(routeDir, { recursive: true });
   }
   fs.writeFileSync(path.join(routeDir, 'index.html'), html);
-  console.log(\`Gerado HTML estático para \${route.path}\`);
+  console.log('Gerado HTML estático para ' + route.path);
 });
