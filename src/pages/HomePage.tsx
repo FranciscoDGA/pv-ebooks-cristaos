@@ -74,7 +74,7 @@ export function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
             {blogArticles.slice(0,3).map((article) => {
                return (
-              <Link to={\`/blog/\${article.id}\`} key={article.id} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
+              <Link to={`/blog/${article.id}`} key={article.id} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
                 <img src={article.thumbnail} alt={article.title} style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }} />
                 <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', color: '#111827', marginBottom: '1rem' }}>{article.title}</h3>
                 <p style={{ color: '#4B5563', lineHeight: '1.6', marginBottom: '1rem' }}>{article.excerpt}</p>
