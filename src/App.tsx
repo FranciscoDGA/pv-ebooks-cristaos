@@ -17,6 +17,7 @@ import { configOrando } from './config/configOrando';
 import { configRei } from './config/configRei';
 import { configChora } from './config/configChora';
 import { configJerusalem } from './config/configJerusalem';
+import { configColecao } from './config/configColecao';
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route path="quando-nao-ha-rei" element={<LandingPage config={configRei} />} />
           <Route path="quem-ainda-chora" element={<LandingPage config={configChora} />} />
           <Route path="somos-todos-jerusalem" element={<LandingPage config={configJerusalem} />} />
+          <Route path="colecao" element={<LandingPage config={configColecao} />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

@@ -4,15 +4,6 @@ import { blogArticles } from '../config/blogConfig';
 
 export function HomePage() {
   const books = [
-    {
-      id: 'colecao-completa',
-      title: 'Box: Coleção Completa',
-      subtitle: '4 E-books + Bônus Inéditos',
-      img: '/home_hero_bg.png',
-      price: 'R$120,00',
-      oldPrice: 'R$150,00',
-      link: '/#livros'
-    },
     { title: "Orando com o Corpo...", img: "/orando_com_corpo_alma_espirito_1781101893485.png", link: "/orando", price: "$29.90", oldPrice: "$49.90" },
     { title: "Quando Não Há Rei", img: "/quando_nao_ha_rei_1781101904540.png", link: "/quando-nao-ha-rei", price: "$34.90", oldPrice: "$55.00" },
     { title: "Quem Ainda Chora?", img: "/quem_ainda_chora_1781101915571.png", link: "/quem-ainda-chora", price: "$24.90", oldPrice: "$39.90" },
@@ -152,6 +143,23 @@ export function HomePage() {
               <span style={{ borderBottom: '2px solid var(--theme-yellow)', paddingBottom: '0.5rem', cursor: 'pointer' }}>LANÇAMENTO</span>
               <span style={{ color: '#777', cursor: 'pointer' }}>PROMOÇÃO</span>
               <span style={{ color: '#777', cursor: 'pointer' }}>EM DESTAQUE</span>
+            </div>
+          </div>
+
+          {/* Banner da Coleção Completa */}
+          <div style={{ marginBottom: '4rem', padding: '0', backgroundColor: '#fff', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 10px 25px rgba(0,0,0,0.05)', display: 'flex', flexWrap: 'wrap' }}>
+            <div style={{ flex: '1 1 300px', backgroundImage: 'url("/home_hero_bg.png")', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '250px' }}></div>
+            <div style={{ flex: '2 1 400px', padding: '3rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{ display: 'inline-block', backgroundColor: 'var(--theme-yellow)', color: '#111', fontWeight: 'bold', padding: '4px 12px', fontSize: '0.8rem', borderRadius: '4px', alignSelf: 'flex-start', marginBottom: '1rem' }}>PROMOÇÃO EXCLUSIVA</div>
+              <h3 style={{ fontSize: '2rem', fontFamily: 'Cormorant Garamond, serif', marginBottom: '1rem' }}>Box: A Cruz e o Coração Humano</h3>
+              <p style={{ color: '#555', marginBottom: '1.5rem', lineHeight: '1.6' }}>Adquira os 4 e-books completos da nossa coleção mais lida. Uma jornada teológica e devocional profunda por um preço especial, com bônus exclusivos incluídos.</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                <span style={{ fontSize: '2rem', color: '#14B8A6', fontWeight: 'bold' }}>R$120,00</span>
+                <span style={{ fontSize: '1.2rem', color: '#ccc', textDecoration: 'line-through' }}>R$150,00</span>
+              </div>
+              <div>
+                <Link to="/colecao" className="btn btn-primary" style={{ backgroundColor: '#111', color: '#fff' }}>Ver Detalhes do Box</Link>
+              </div>
             </div>
           </div>
 

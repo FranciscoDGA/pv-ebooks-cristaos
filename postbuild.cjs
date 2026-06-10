@@ -40,6 +40,12 @@ const routes = [
     title: 'Blog | O Chamado da Graça',
     description: 'Leia artigos, devocionais e reflexões bíblicas profundas.',
     image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/home_hero_bg.png'
+  },
+  {
+    path: '/colecao',
+    title: 'Box: A Cruz e o Coração Humano | Coleção Completa',
+    description: 'Leve os 4 e-books completos do Pr. Francisco Gomes com desconto exclusivo.',
+    image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/home_hero_bg.png'
   }
 ];
 
