@@ -59,31 +59,73 @@ export function HomePage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             
-            <div style={{ backgroundColor: '#0EA5E9', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
-              <div>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Estudos da Graça</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Ver Coleção &gt;</Link>
+            <div style={{ backgroundColor: '#0EA5E9', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Estudos da Graça</h3>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ver Coleção &gt;</Link>
               </div>
             </div>
 
-            <div style={{ backgroundColor: '#FACC15', padding: '2rem', color: '#111', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
-              <div>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Vida de Oração</h3>
-                <Link to="/orando" style={{ color: '#111', fontWeight: 'bold', textDecoration: 'underline' }}>Ler Livro &gt;</Link>
+            <div style={{ backgroundColor: '#FACC15', padding: '2rem', color: '#111', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Vida de Oração</h3>
+                <Link to="/orando" style={{ color: '#111', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ler Livro &gt;</Link>
               </div>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.8 }}>Orando Com o Corpo, a Alma e o Espírito</p>
             </div>
 
-            <div style={{ backgroundColor: '#F97316', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
-              <div>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Livros Infantis</h3>
-                <Link to="/" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Em Breve &gt;</Link>
+            <div style={{ backgroundColor: '#14B8A6', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Consolo</h3>
+                <Link to="/quem-ainda-chora" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ler Livro &gt;</Link>
               </div>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>Quem Ainda Chora?</p>
             </div>
 
-            <div style={{ backgroundColor: '#14B8A6', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
-              <div>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Consolo</h3>
-                <Link to="/quem-ainda-chora" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Ler Livro &gt;</Link>
+            <div style={{ backgroundColor: '#F43F5E', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.3rem', margin: 0 }}>O Que a Bíblia Diz Sobre…</h3>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
+              </div>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.85rem', opacity: 0.9 }}>Dinheiro, Casamento, Fim dos Tempos</p>
+            </div>
+
+            <div style={{ backgroundColor: '#8B5CF6', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Últimos Tempos</h3>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
+              </div>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>Profecia, Apocalipse, Arrebatamento</p>
+            </div>
+
+            <div style={{ backgroundColor: '#EC4899', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Mulher de Fé</h3>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
+              </div>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>A Oração da Esposa, Provérbios 31</p>
+            </div>
+
+            <div style={{ backgroundColor: '#10B981', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Casamento Cristão</h3>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
+              </div>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>Casamento segundo a Bíblia</p>
+            </div>
+
+            <div style={{ backgroundColor: '#6366F1', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Devocionais</h3>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
+              </div>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>365 Dias, 30 Dias com Deus</p>
+            </div>
+
+            <div style={{ backgroundColor: '#F97316', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Livros Infantis</h3>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
               </div>
             </div>
 

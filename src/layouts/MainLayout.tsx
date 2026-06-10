@@ -97,9 +97,8 @@ export function MainLayout() {
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
             <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} O Chamado da Graça. Todos os direitos reservados.</p>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              {/* Payment icons placeholder */}
-              <span style={{ background: '#fff', color: '#111', padding: '2px 8px', borderRadius: '2px', fontWeight: 'bold' }}>VISA</span>
-              <span style={{ background: '#fff', color: '#111', padding: '2px 8px', borderRadius: '2px', fontWeight: 'bold' }}>MASTERCARD</span>
+              <span style={{ background: '#fff', color: '#004B8C', padding: '4px 10px', borderRadius: '3px', fontWeight: 'bold', fontSize: '0.85rem', border: '1px solid #ccc' }}>VISA</span>
+              <span style={{ background: '#fff', color: '#004B8C', padding: '4px 10px', borderRadius: '3px', fontWeight: 'bold', fontSize: '0.85rem', border: '1px solid #ccc' }}>MASTERCARD</span>
             </div>
           </div>
         </div>
