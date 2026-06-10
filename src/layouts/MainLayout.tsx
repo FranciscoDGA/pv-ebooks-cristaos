@@ -18,10 +18,12 @@ export function MainLayout() {
       <header style={{ background: '#0F172A', color: '#fff', padding: '1rem 0' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Link to="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.2rem', fontWeight: 'bold', letterSpacing: '2px' }}>COLEÇÃO DO REINO</Link>
-          <nav style={{ display: 'flex', gap: '1.5rem' }}>
+          <nav style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
             <Link to="/" style={{ color: '#D1D5DB', textDecoration: 'none' }}>Home</Link>
             <Link to="/blog" style={{ color: '#D1D5DB', textDecoration: 'none' }}>Blog</Link>
-            <Link to="/#livros" style={{ color: '#D1D5DB', textDecoration: 'none' }}>Livros</Link>
+            <a href="/#livros" style={{ color: '#D1D5DB', textDecoration: 'none' }}>Coleções</a>
+            <a href="/#author" style={{ color: '#D1D5DB', textDecoration: 'none' }}>Autor</a>
+            <Link to="/contato" style={{ color: '#D1D5DB', textDecoration: 'none' }}>Contato</Link>
           </nav>
         </div>
       </header>
