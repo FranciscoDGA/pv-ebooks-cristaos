@@ -1,21 +1,23 @@
-
-
 export function SummarySection({ config }: { config: any }) {
-  if (!config.summary) return null;
+  const { summary } = config;
   return (
-    <section id="summary" className="section-padding bg-gray">
+    <section className="section-padding summary-section">
       <div className="container">
-        <h2 className="section-title">Sumário da Obra</h2>
-        <div className="summary-info">
-          <span>{config.pages} páginas</span>
-          <span>Tempo de leitura: 1 a 2 horas</span>
-          <span>Nível: Iniciante</span>
+        <div className="summary-header">
+          <h2>Sumário da Obra</h2>
+          <div className="summary-meta">
+            <span>{summary.pageCount} páginas</span>
+            <span>�</span>
+            <span>Tempo de leitura: {summary.readingTime}</span>
+            <span>�</span>
+            <span>Nível: {summary.level}</span>
+          </div>
         </div>
-        <div className="summary-list">
-          {config.summary.map((chapter: string, idx: number) => (
-            <div className="summary-item" key={idx}>
-              <span className="chapter-num">Capítulo {idx + 1}</span>
-              <span className="chapter-title">{chapter}</span>
+        <div className="modules-list">
+          {summary.modules.map((mod: any, idx: number) => (
+            <div key={idx} className="module-item">
+              <h3 className="module-title">{mod.title}</h3>
+              <p className="module-desc">{mod.description}</p>
             </div>
           ))}
         </div>
