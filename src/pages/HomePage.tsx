@@ -8,6 +8,7 @@ export function HomePage() {
 
   const books = [
     { title: "Orando com o Corpo...", img: "/orando_com_corpo_alma_espirito_1781101893485.png", link: "/orando", price: "R$29,90", oldPrice: "R$49,90" },
+    { title: "Histórias da Bíblia Para Dormir", img: "/historia_biblia_dormir.png", link: "/historias-para-dormir", price: "R$24,90", oldPrice: "R$39,90" },
     { title: "Quando Não Há Rei", img: "/quando_nao_ha_rei_1781101904540.png", link: "/quando-nao-ha-rei", price: "R$34,90", oldPrice: "R$55,00" },
     { title: "Quem Ainda Chora?", img: "/quem_ainda_chora_1781101915571.png", link: "/quem-ainda-chora", price: "R$24,90", oldPrice: "R$39,90" },
     { title: "Somos Todos Jerusalém", img: "/somos_todos_jerusalem_1781101925943.png", link: "/somos-todos-jerusalem", price: "R$39,90", oldPrice: "R$60,00" },
@@ -136,8 +137,9 @@ export function HomePage() {
             <div style={{ backgroundColor: '#F97316', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Livros Infantis</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
+                <Link to="/historias-para-dormir" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ver Livro &gt;</Link>
               </div>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>Histórias da Bíblia Para Dormir</p>
             </div>
 
           </div>

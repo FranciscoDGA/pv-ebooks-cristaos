@@ -30,9 +30,9 @@ export function ArticlePage() {
                 <img 
                   {...props} 
                   style={{ 
-                    maxWidth: '100%', 
-                    maxHeight: '350px', 
-                    width: 'auto', 
+                    width: '100%', 
+                    aspectRatio: '16/9', 
+                    objectFit: 'cover',
                     display: 'block', 
                     margin: '2rem auto', 
                     borderRadius: '8px',

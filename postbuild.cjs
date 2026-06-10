@@ -46,6 +46,12 @@ const routes = [
     title: 'Box: A Cruz e o Coração Humano | Coleção Completa',
     description: 'Leve os 4 e-books completos do Pr. Francisco Gomes com desconto exclusivo.',
     image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/home_hero_bg.png'
+  },
+  {
+    path: '/historias-para-dormir',
+    title: 'Histórias da Bíblia Para Dormir | Livros Infantis',
+    description: 'Um livro encantador com histórias bíblicas adaptadas para a hora de dormir.',
+    image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/historia_biblia_dormir.png'
   }
 ];
 
