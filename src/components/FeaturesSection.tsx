@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 export function FeaturesSection({ config }: { config: any }) {
   if (!config.features) return null;

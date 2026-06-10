@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 export function SummarySection({ config }: { config: any }) {
   if (!config.summary) return null;

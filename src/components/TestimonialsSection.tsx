@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 export function TestimonialsSection({ config }: { config: any }) {
   if (!config.testimonials) return null;
