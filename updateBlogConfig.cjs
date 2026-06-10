@@ -1,4 +1,6 @@
+const fs = require('fs');
 
+const extendedConfig = `
 export const blogArticles = [
   {
     id: "jeremias-9-1",
@@ -8,7 +10,7 @@ export const blogArticles = [
     date: "10 Jun 2026",
     thumbnail: "/article_jeremias.png",
     readTime: "8 min",
-    content: `
+    content: \`
 A imagem de um profeta frequentemente evoca dureza, julgamento e palavras implacáveis. No entanto, quando olhamos para Jeremias, encontramos um homem cujas bochechas estavam perpetuamente molhadas. 
 
 Em Jeremias 9:1, ele clama: *"Quem dera a minha cabeça fosse um poço de água e os meus olhos uma fonte de lágrimas, para que eu chorasse de dia e de noite pelos mortos da filha do meu povo!"*
@@ -30,7 +32,7 @@ Quando nossos corações batem no mesmo ritmo do coração de Deus, as coisas qu
 Você já tentou avisar alguém que você ama sobre um perigo iminente, apenas para ser ignorado ou zombado? Essa foi a vida de Jeremias durante 40 anos. Ele pregou fielmente, advertiu apaixonadamente, e não viu um único sinal de arrependimento nacional.
 
 Isso nos leva a uma reflexão crucial: a nossa fidelidade a Deus não é medida pelo sucesso visível ou pela aceitação popular, mas pela nossa obediência inabalável à Sua voz, mesmo quando ninguém mais quer ouvir.
-    `,
+    \`,
     relatedBook: {
       title: "Quem Ainda Chora?",
       image: "/quem_ainda_chora_1781101915571.png",
@@ -45,7 +47,7 @@ Isso nos leva a uma reflexão crucial: a nossa fidelidade a Deus não é medida 
     date: "08 Jun 2026",
     thumbnail: "/article_cruz.png",
     readTime: "9 min",
-    content: `
+    content: \`
 Lucas 19:41 descreve uma das cenas mais comoventes dos Evangelhos: *"Quando ia chegando, vendo a cidade, chorou e dizia: Ah! Se conheceras por ti mesma, ainda hoje, o que é devido à paz!"*
 
 Jerusalém era o epicentro da religião, o lugar do Templo, dos sacrifícios, dos fariseus. E, no entanto, eles não reconheceram o tempo da sua visitação. A religião muitas vezes nos cega para o Relacional.
@@ -69,7 +71,7 @@ Isso é o que diferencia o Cristianismo de qualquer outra religião. Nós não s
 Nós somos Jerusalém. Nós o negamos, nós escolhemos nossos próprios caminhos, nós preferimos os rituais vazios à presença viva de Cristo. Mas o Seu perdão é poderoso o suficiente para transformar os Seus algozes em Seus filhos. 
 
 Se a graça alcançou Jerusalém, ela certamente pode alcançar você, não importa quão longe você sinta que foi.
-    `,
+    \`,
     relatedBook: {
       title: "Somos Todos Jerusalém",
       image: "/somos_todos_jerusalem_1781101925943.png",
@@ -84,7 +86,7 @@ Se a graça alcançou Jerusalém, ela certamente pode alcançar você, não impo
     date: "05 Jun 2026",
     thumbnail: "/article_oracao.png",
     readTime: "10 min",
-    content: `
+    content: \`
 Muitas vezes, nossa vida de oração se torna mecânica. Oramos com a mente, proferindo palavras que aprendemos, mas nosso coração está distante e nosso corpo está inquieto. 
 
 A verdadeira oração, no entanto, é um envolvimento de todo o ser: corpo, alma e espírito.
@@ -108,7 +110,7 @@ Mas e o corpo? A Bíblia está cheia de exemplos físicos na oração: mãos lev
 A postura do nosso corpo frequentemente reflete — ou ajuda a moldar — a postura do nosso coração. Dobrar os joelhos pode nos ajudar a internalizar a reverência que estamos expressando com os lábios.
 
 Quando integramos corpo, alma e espírito na oração, deixamos de apenas "dizer orações" e passamos a verdadeiramente "comungar com Deus".
-    `,
+    \`,
     relatedBook: {
       title: "Orando com o Corpo, a Alma e o Espírito",
       image: "/orando_com_corpo_alma_espirito_1781101893485.png",
@@ -123,7 +125,7 @@ Quando integramos corpo, alma e espírito na oração, deixamos de apenas "dizer
     date: "02 Jun 2026",
     thumbnail: "/home_hero_bg.png",
     readTime: "8 min",
-    content: `
+    content: \`
 O livro de Juízes termina com uma das frases mais assustadoras de toda a Bíblia: *"Naqueles dias não havia rei em Israel; cada um fazia o que achava mais reto."* (Juízes 21:25).
 
 Esta não é apenas uma declaração política; é um diagnóstico espiritual profundo.
@@ -147,7 +149,7 @@ Esse ciclo só é possível porque o povo perdeu o seu referencial de verdade. Q
 A solução para a autonomia destrutiva não é a criação de mais leis humanas, mas a submissão a um Rei divino. O livro de Juízes prepara o palco para a chegada de Davi, mas mais ultimamente, aponta para a nossa necessidade desesperada do Rei dos Reis, Jesus Cristo.
 
 Somente quando entronizamos Cristo no centro de nossas vidas é que encontramos verdadeira liberdade — não a liberdade para pecar, mas a liberdade para viver de acordo com o design original para o qual fomos criados.
-    `,
+    \`,
     relatedBook: {
       title: "Quando Não Há Rei",
       image: "/quando_nao_ha_rei_1781101904540.png",
@@ -155,3 +157,6 @@ Somente quando entronizamos Cristo no centro de nossas vidas é que encontramos 
     }
   }
 ];
+`;
+
+fs.writeFileSync('src/config/blogConfig.ts', extendedConfig);
