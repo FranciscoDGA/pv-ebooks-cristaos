@@ -24,7 +24,7 @@ export function LandingPage({ config }: { config: any }) {
       <CollectionSection config={config} />
       <HeroSection config={config} />
       <QuoteSection config={config} />
-      <AmazonStyleSection config={config} />
+      <AmazonStyleSection />
       <AboutBookSection config={config} />
       <BookPreviewSection config={config} />
       <IsForYouSection config={config} />
