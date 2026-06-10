@@ -13,13 +13,13 @@ export function HomePage() {
     <div>
       {/* Hero Section */}
       <section style={{ 
-        backgroundImage: 'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url("/home_hero_bg.png")', 
+        backgroundImage: 'linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url("/home_hero_bg.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', color: '#fff', padding: '10rem 1rem', textAlign: 'center' 
       }}>
         <div className="container" style={{ maxWidth: '800px' }}>
-          <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '4.5rem', marginBottom: '1.5rem', letterSpacing: '1px', textShadow: '0 4px 6px rgba(0,0,0,0.9)' }}>O Chamado da Graça</h1>
-          <p style={{ fontSize: '1.5rem', color: '#E5E7EB', lineHeight: '1.6', marginBottom: '2rem', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Uma biblioteca digital cristã para quem deseja ler devagar, pensar profundamente e caminhar mais perto de Deus.</p>
-          <p style={{ fontSize: '1.3rem', fontStyle: 'italic', color: '#D1D5DB', marginBottom: '3rem', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Livros que confrontam, edificam e conduzem o coração humano à cruz.</p>
+          <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '4.5rem', marginBottom: '1.5rem', letterSpacing: '1px', textShadow: '0 6px 15px rgba(0,0,0,1), 0 2px 4px rgba(0,0,0,1)' }}>O Chamado da Graça</h1>
+          <p style={{ fontSize: '1.5rem', color: '#E5E7EB', lineHeight: '1.6', marginBottom: '2rem', textShadow: '0 4px 10px rgba(0,0,0,1)' }}>Uma biblioteca digital cristã para quem deseja ler devagar, pensar profundamente e caminhar mais perto de Deus.</p>
+          <p style={{ fontSize: '1.3rem', fontStyle: 'italic', color: '#D1D5DB', marginBottom: '3rem', textShadow: '0 4px 10px rgba(0,0,0,1)' }}>Livros que confrontam, edificam e conduzem o coração humano à cruz.</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <a href="#livros" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>Conheça a Coleção</a>
             <Link to="/blog" className="btn btn-secondary" style={{ padding: '1rem 2rem', fontSize: '1.1rem', backgroundColor: 'transparent', border: '2px solid #fff', color: '#fff' }}>Leia os Artigos</Link>
