@@ -4,6 +4,15 @@ import { blogArticles } from '../config/blogConfig';
 
 export function HomePage() {
   const books = [
+    {
+      id: 'colecao-completa',
+      title: 'Box: Coleção Completa',
+      subtitle: '4 E-books + Bônus Inéditos',
+      img: '/home_hero_bg.png',
+      price: 'R$120,00',
+      oldPrice: 'R$150,00',
+      link: '/#livros'
+    },
     { title: "Orando com o Corpo...", img: "/orando_com_corpo_alma_espirito_1781101893485.png", link: "/orando", price: "$29.90", oldPrice: "$49.90" },
     { title: "Quando Não Há Rei", img: "/quando_nao_ha_rei_1781101904540.png", link: "/quando-nao-ha-rei", price: "$34.90", oldPrice: "$55.00" },
     { title: "Quem Ainda Chora?", img: "/quem_ainda_chora_1781101915571.png", link: "/quem-ainda-chora", price: "$24.90", oldPrice: "$39.90" },
