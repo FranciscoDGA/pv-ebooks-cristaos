@@ -72,7 +72,7 @@ export function HomePage() {
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '3rem' }}>Últimas Reflexões</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
-            {blogArticles.slice(0,3).map((article, i) => {
+            {blogArticles.slice(0,3).map((article) => {
                
                return (
               <Link to={`/blog/${article.id}`} key={article.id} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
