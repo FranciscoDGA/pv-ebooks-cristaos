@@ -24,7 +24,26 @@ export function ArticlePage() {
         </div>
 
         <div className="prose" style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#374151', fontFamily: 'Inter, sans-serif' }}>
-          <ReactMarkdown>{article.content}</ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              img: ({node, ...props}) => (
+                <img 
+                  {...props} 
+                  style={{ 
+                    maxWidth: '100%', 
+                    maxHeight: '350px', 
+                    width: 'auto', 
+                    display: 'block', 
+                    margin: '2rem auto', 
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)'
+                  }} 
+                />
+              )
+            }}
+          >
+            {article.content}
+          </ReactMarkdown>
         </div>
 
         <div style={{ marginTop: '5rem', padding: '3rem', backgroundColor: '#FAFAF8', borderRadius: '12px', border: '1px solid #E5E7EB', display: 'flex', gap: '2rem', alignItems: 'center' }}>
