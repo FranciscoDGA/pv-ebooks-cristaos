@@ -14,7 +14,6 @@ import { BonusSection } from './BonusSection';
 import { TestimonialsSection } from './TestimonialsSection';
 import { OfferSection } from './OfferSection';
 import { FAQSection } from './FAQSection';
-import { FooterSection } from './FooterSection';
 import { CrossSellSection } from './CrossSellSection';
 
 export function LandingPage({ config }: { config: any }) {
@@ -42,7 +41,6 @@ export function LandingPage({ config }: { config: any }) {
       <OfferSection config={config} />
       <FAQSection config={config} />
       <CrossSellSection />
-      <FooterSection config={config} />
     </div>
   );
 }
