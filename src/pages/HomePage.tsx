@@ -4,10 +4,10 @@ import { blogArticles } from '../config/blogConfig';
 
 export function HomePage() {
   const books = [
-    { title: "Orando com o Corpo...", img: "/orando_com_corpo_alma_espirito_1781101893485.png", link: "/orando" },
-    { title: "Quando Não Há Rei", img: "/quando_nao_ha_rei_1781101904540.png", link: "/quando-nao-ha-rei" },
-    { title: "Quem Ainda Chora?", img: "/quem_ainda_chora_1781101915571.png", link: "/quem-ainda-chora" },
-    { title: "Somos Todos Jerusalém", img: "/somos_todos_jerusalem_1781101925943.png", link: "/somos-todos-jerusalem" },
+    { title: "Orando com o Corpo...", img: "/orando_com_corpo_alma_espirito_1781101893485.png", link: "/orando", price: "$29.90", oldPrice: "$49.90" },
+    { title: "Quando Não Há Rei", img: "/quando_nao_ha_rei_1781101904540.png", link: "/quando-nao-ha-rei", price: "$34.90", oldPrice: "$55.00" },
+    { title: "Quem Ainda Chora?", img: "/quem_ainda_chora_1781101915571.png", link: "/quem-ainda-chora", price: "$24.90", oldPrice: "$39.90" },
+    { title: "Somos Todos Jerusalém", img: "/somos_todos_jerusalem_1781101925943.png", link: "/somos-todos-jerusalem", price: "$39.90", oldPrice: "$60.00" },
   ];
 
   return (
@@ -16,82 +16,152 @@ export function HomePage() {
         <title>O Chamado da Graça | Editora Cristã Digital</title>
         <meta name="description" content="Uma biblioteca digital cristã para quem deseja ler devagar, pensar profundamente e caminhar mais perto de Deus." />
       </Helmet>
-      {/* Hero Section */}
-      <section style={{ 
-        backgroundImage: 'linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url("/home_hero_bg.png")', 
-        backgroundSize: 'cover', backgroundPosition: 'center', color: '#fff', padding: '10rem 1rem', textAlign: 'center' 
-      }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '4.5rem', marginBottom: '1.5rem', letterSpacing: '1px', textShadow: '0 6px 15px rgba(0,0,0,1), 0 2px 4px rgba(0,0,0,1)' }}>O Chamado da Graça</h1>
-          <p style={{ fontSize: '1.5rem', color: '#E5E7EB', lineHeight: '1.6', marginBottom: '2rem', textShadow: '0 4px 10px rgba(0,0,0,1)' }}>Uma biblioteca digital cristã para quem deseja ler devagar, pensar profundamente e caminhar mais perto de Deus.</p>
-          <p style={{ fontSize: '1.3rem', fontStyle: 'italic', color: '#D1D5DB', marginBottom: '3rem', textShadow: '0 4px 10px rgba(0,0,0,1)' }}>Livros que confrontam, edificam e conduzem o coração humano à cruz.</p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <a href="#livros" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>Conheça a Coleção</a>
-            <Link to="/blog" className="btn btn-secondary" style={{ padding: '1rem 2rem', fontSize: '1.1rem', backgroundColor: 'transparent', border: '2px solid #fff', color: '#fff' }}>Leia os Artigos</Link>
+
+      {/* Hero Section E-commerce Style */}
+      <section style={{ display: 'flex', minHeight: '600px', backgroundColor: '#FAFAF8' }}>
+        {/* Sidebar Categories (Hide on small screens) */}
+        <aside style={{ width: '280px', backgroundColor: '#333', color: '#fff', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
+          <h3 style={{ textTransform: 'uppercase', marginBottom: '1.5rem', fontSize: '1.2rem', letterSpacing: '1px', borderBottom: '1px solid #444', paddingBottom: '1rem' }}>CATEGORIES</h3>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <li><Link to="/#livros" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Lançamentos</Link></li>
+            <li><Link to="/orando" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Vida de Oração</Link></li>
+            <li><Link to="/blog" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Profetas</Link></li>
+            <li><Link to="/blog" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Igreja & Sociedade</Link></li>
+            <li><Link to="/blog" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Arrependimento</Link></li>
+            <li><Link to="/blog" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Santidade</Link></li>
+          </ul>
+        </aside>
+
+        {/* Hero Image & Content */}
+        <div style={{ 
+          flex: 1,
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("/home_hero_bg.png")', 
+          backgroundSize: 'cover', backgroundPosition: 'center', color: '#fff', 
+          display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '4rem'
+        }}>
+          <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '5rem', marginBottom: '1rem', lineHeight: '1.1' }}>
+            O Chamado <br/>da Graça
+          </h1>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+            <span style={{ backgroundColor: 'var(--theme-yellow)', color: '#111', padding: '0.5rem 1rem', fontWeight: 'bold', fontSize: '1.5rem' }}>-20%</span>
+            <span style={{ fontSize: '1.5rem', color: '#ccc', textDecoration: 'line-through' }}>R$150,00</span>
+            <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>R$120,00</span>
+          </div>
+          <p style={{ fontSize: '1.2rem', color: '#E5E7EB', maxWidth: '500px', marginBottom: '2rem' }}>A coleção completa para transformar sua caminhada cristã. Livros que confrontam, edificam e conduzem o coração à cruz.</p>
+          <div>
+            <a href="#livros" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem', backgroundColor: 'var(--theme-yellow)', color: '#111' }}>Compre Agora</a>
           </div>
         </div>
       </section>
 
-      {/* Missão */}
-      <section className="section-padding" style={{ backgroundColor: '#fff', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.5rem', marginBottom: '2rem', color: '#111827' }}>Por que O Chamado da Graça existe?</h2>
-          <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#4B5563', marginBottom: '1.5rem' }}>Vivemos em uma época de leituras rápidas e reflexões superficiais.</p>
-          <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#4B5563', marginBottom: '1.5rem' }}>Esta coleção nasceu do desejo de produzir livros escritos em linguagem simples para crianças compreenderem e adultos sentirem.</p>
-          <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#111827', fontWeight: 'bold' }}>Nosso objetivo não é apenas informar, mas conduzir pessoas a uma caminhada mais profunda com Deus.</p>
+      {/* Colorful Banners Section */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#FAFAF8' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            
+            <div style={{ backgroundColor: '#0EA5E9', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
+              <div>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Estudos da Graça</h3>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Ver Coleção ></Link>
+              </div>
+            </div>
+
+            <div style={{ backgroundColor: '#FACC15', padding: '2rem', color: '#111', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
+              <div>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Vida de Oração</h3>
+                <Link to="/orando" style={{ color: '#111', fontWeight: 'bold', textDecoration: 'underline' }}>Ler Livro ></Link>
+              </div>
+            </div>
+
+            <div style={{ backgroundColor: '#F97316', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
+              <div>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Livros Infantis</h3>
+                <Link to="/" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Em Breve ></Link>
+              </div>
+            </div>
+
+            <div style={{ backgroundColor: '#14B8A6', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
+              <div>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Consolo</h3>
+                <Link to="/quem-ainda-chora" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Ler Livro ></Link>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
-      
-      {/* Coleção */}
+
+      {/* TOP INTERESTING - Books Grid */}
       <section id="livros" className="section-padding" style={{ backgroundColor: '#FAFAF8' }}>
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '3rem' }}>Coleção A Cruz e o Coração Humano</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem' }}>TOP INTERESTING</h2>
+            <p style={{ color: '#777', maxWidth: '600px', margin: '0 auto' }}>Navegue pela coleção dos nossos livros mais vendidos. Você certamente encontrará o que busca.</p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '2rem', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
+              <span style={{ borderBottom: '2px solid var(--theme-yellow)', paddingBottom: '0.5rem', cursor: 'pointer' }}>NEW ARRIVAL</span>
+              <span style={{ color: '#777', cursor: 'pointer' }}>ON SALE</span>
+              <span style={{ color: '#777', cursor: 'pointer' }}>FEATURED PRODUCTS</span>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', justifyContent: 'center' }}>
             {books.map((b, i) => (
-              <div key={i} style={{ width: '220px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div key={i} className="product-card">
+                <div className="product-badge-new">NEW</div>
                 <Link to={b.link}>
-                  <img src={b.img} alt={b.title} style={{ width: '100%', borderRadius: '4px', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)', transition: 'transform 0.3s' }} onMouseOver={e=>e.currentTarget.style.transform='scale(1.05)'} onMouseOut={e=>e.currentTarget.style.transform='scale(1)'} />
+                  <div style={{ padding: '2rem 2rem 0 2rem', backgroundColor: '#f9f9f9', borderBottom: '1px solid #eee' }}>
+                    <img src={b.img} alt={b.title} style={{ width: '100%', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }} />
+                  </div>
                 </Link>
-                <h4 style={{ margin: '1.5rem 0', fontSize: '1.2rem', fontFamily: 'Cormorant Garamond, serif' }}>{b.title}</h4>
-                <Link to={b.link} className="btn" style={{ backgroundColor: '#111827', color: '#fff', padding: '0.6rem 1.2rem', fontSize: '0.9rem', width: '100%' }}>Ver Livro</Link>
+                <div className="product-stars">★★★★★</div>
+                <h4 style={{ margin: '0.5rem 0', fontSize: '1rem', color: '#333' }}>{b.title}</h4>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <span style={{ color: '#14B8A6', fontWeight: 'bold' }}>{b.price}</span>
+                  <span style={{ color: '#ccc', textDecoration: 'line-through' }}>{b.oldPrice}</span>
+                </div>
+                <Link to={b.link} className="btn" style={{ backgroundColor: '#fff', color: '#111', border: '1px solid #ccc', padding: '0.4rem 1rem', fontSize: '0.8rem' }}>View Details</Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Emocional Coleção */}
-      <section className="section-padding" style={{ backgroundColor: '#111827', color: '#fff', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '3rem', marginBottom: '2rem', color: '#F3F4F6' }}>Uma coleção para ser lida devagar</h2>
-          <p style={{ fontSize: '1.3rem', lineHeight: '1.8', color: '#9CA3AF', marginBottom: '2rem' }}>Livros escritos em linguagem simples para crianças compreenderem e adultos sentirem.</p>
-          <p style={{ fontSize: '1.5rem', fontFamily: 'Cormorant Garamond, serif', color: '#D1D5DB', margin: '0.5rem 0' }}>Reflexões que confrontam.</p>
-          <p style={{ fontSize: '1.5rem', fontFamily: 'Cormorant Garamond, serif', color: '#D1D5DB', margin: '0.5rem 0' }}>Palavras que consolam.</p>
-          <p style={{ fontSize: '1.5rem', fontFamily: 'Cormorant Garamond, serif', color: '#D1D5DB', margin: '0.5rem 0' }}>Estudos que conduzem.</p>
-          <p style={{ fontSize: '1.5rem', fontFamily: 'Cormorant Garamond, serif', color: '#FBBF24', margin: '2rem 0 0 0', fontStyle: 'italic' }}>Porque a mesma cruz que nos acusa é a que nos salva.</p>
-        </div>
-      </section>
-
-      {/* Artigos Blog */}
+      {/* Latest Blog Posts */}
       <section className="section-padding" style={{ backgroundColor: '#fff' }}>
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '3rem' }}>Últimas Reflexões</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>LATEST FROM OUR BLOG</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {blogArticles.slice(0,3).map((article) => {
+               // Pseudo date extraction
+               const day = "06";
+               const month = "DEC";
+               
                return (
-              <Link to={`/blog/${article.id}`} key={article.id} style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
-                <img src={article.thumbnail} alt={article.title} style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }} />
-                <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', color: '#111827', marginBottom: '1rem' }}>{article.title}</h3>
-                <p style={{ color: '#4B5563', lineHeight: '1.6', marginBottom: '1rem' }}>{article.excerpt}</p>
-                <span style={{ color: '#1D4ED8', fontWeight: 'bold' }}>Continuar lendo →</span>
-              </Link>
+              <div key={article.id} className="blog-card" style={{ display: 'flex', flexDirection: 'column' }}>
+                <Link to={`/blog/${article.id}`}>
+                  <div style={{ position: 'relative' }}>
+                    <img src={article.thumbnail} alt={article.title} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+                    <div className="blog-date-badge">
+                      <div className="blog-date-day">{day}</div>
+                      <div className="blog-date-month">{month}</div>
+                    </div>
+                  </div>
+                </Link>
+                <div style={{ padding: '1.5rem', textAlign: 'center' }}>
+                  <h3 style={{ fontSize: '1.3rem', color: '#222', marginBottom: '1rem' }}>{article.title}</h3>
+                  <p style={{ color: '#777', fontSize: '0.9rem', marginBottom: '1rem' }}>Demo Postthemes</p>
+                  <p style={{ color: '#555', lineHeight: '1.6', fontSize: '0.95rem' }}>{article.excerpt}</p>
+                </div>
+              </div>
             )})}
           </div>
         </div>
       </section>
 
       {/* Autor */}
-      <section id="author" className="section-padding" style={{ backgroundColor: '#FAFAF8' }}>
+      <section id="author" className="section-padding" style={{ backgroundColor: '#FAFAF8', borderTop: '1px solid #eee' }}>
         <div className="container">
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
             <div style={{ flex: '1 1 300px' }}>
