@@ -16,7 +16,7 @@ export function FAQSection() {
         <h2 className="faq-title">Perguntas Frequentes</h2>
         <div className="faq-list">
           {faq.map((item, idx) => (
-            <div key={idx} className={aq-item }>
+            <div key={idx} className={`faq-item ${openIdx === idx ? 'active' : ''}`}>
               <button className="faq-question" onClick={() => toggle(idx)}>
                 {item.question}
                 <span>{openIdx === idx ? '-' : '+'}</span>
