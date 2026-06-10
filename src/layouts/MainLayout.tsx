@@ -20,9 +20,11 @@ export function MainLayout() {
           <Link to="/" style={{ color: '#FACC15', textDecoration: 'none', fontSize: '1.8rem', fontWeight: 'bold', fontFamily: 'var(--font-title)', fontStyle: 'italic' }}>Editora da Graça</Link>
           <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center', fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase' }}>
             <Link to="/" className="nav-link">Home</Link>
-            <Link to="/blog" className="nav-link">Blog</Link>
-            <a href="/#livros" className="nav-link">Coleções</a>
-            <a href="/#author" className="nav-link">Autor</a>
+            <div className="nav-links">
+              <Link to="/#livros" className="nav-link">Coleção</Link>
+              <Link to="/autor" className="nav-link">O Autor</Link>
+              <Link to="/blog" className="nav-link">Blog</Link>
+            </div>
             <Link to="/contato" className="nav-link">Contato</Link>
           </nav>
         </div>
@@ -30,8 +32,29 @@ export function MainLayout() {
       <main style={{ flex: 1 }}>
         <Outlet />
       </main>
-      <footer style={{ background: '#222222', color: '#9CA3AF', paddingTop: '4rem' }}>
-        <div className="container" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', justifyContent: 'space-between' }}>
+      <footer style={{ background: '#222222', color: '#9CA3AF' }}>
+        {/* Latest Tweets & Stay Connected Band */}
+        <div style={{ background: '#FAFAF8', color: '#111', padding: '2rem 0', borderTop: '1px solid #E5E7EB' }}>
+          <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '2rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: 1, minWidth: '300px' }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#F97316', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>X</div>
+              <p style={{ fontStyle: 'italic', fontSize: '0.9rem', margin: 0, color: '#555' }}>
+                "O clamor de quem ainda chora pode mudar a história de uma nação." <span style={{ color: '#F97316' }}>@ChamadoDaGraca</span>
+              </p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+              <strong style={{ textTransform: 'uppercase', fontSize: '0.9rem' }}>STAY CONNECTED</strong>
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <span style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#fff', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>f</span>
+                <span style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#fff', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>in</span>
+                <span style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#fff', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>ig</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Main Footer Content */}
+        <div className="container" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', justifyContent: 'space-between', paddingTop: '4rem' }}>
           <div style={{ flex: '1 1 200px' }}>
             <h4 style={{ color: '#fff', marginBottom: '1.5rem', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>PRODUTOS</h4>
             <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2.2', fontSize: '0.9rem' }}>
@@ -54,7 +77,7 @@ export function MainLayout() {
           <div style={{ flex: '1 1 200px' }}>
             <h4 style={{ color: '#fff', marginBottom: '1.5rem', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>SUA CONTA</h4>
             <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2.2', fontSize: '0.9rem' }}>
-              <li><Link to="/#author" style={{ color: 'inherit', textDecoration: 'none' }}>Sobre o Autor</Link></li>
+              <li><Link to="/autor" style={{ color: 'inherit', textDecoration: 'none' }}>Sobre o Autor</Link></li>
               <li><Link to="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</Link></li>
               <li><Link to="/contato" style={{ color: 'inherit', textDecoration: 'none' }}>Suporte</Link></li>
               <li><Link to="/#livros" style={{ color: 'inherit', textDecoration: 'none' }}>Meus Livros</Link></li>

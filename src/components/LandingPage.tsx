@@ -23,8 +23,8 @@ export function LandingPage({ config }: { config: any }) {
   return (
     <div className="font-sans">
       <Helmet>
-        <title>{config.title} | O Chamado da Graça</title>
-        <meta name="description" content={config.subtitle} />
+        <title>{config.hero?.title || 'Ebook'} | O Chamado da Graça</title>
+        <meta name="description" content={config.hero?.subtitle || ''} />
       </Helmet>
       <CollectionSection config={config} />
       <HeroSection config={config} />

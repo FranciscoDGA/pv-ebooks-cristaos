@@ -10,6 +10,8 @@ import { LandingPage } from './components/LandingPage';
 import { PlaceholderPage } from './pages/PlaceholderPage';
 import { LegalPage } from './pages/LegalPage';
 import { ContactPage } from './pages/ContactPage';
+import { AuthorPage } from './pages/AuthorPage';
+import { ScrollToTop } from './components/ScrollToTop';
 
 import { configOrando } from './config/configOrando';
 import { configRei } from './config/configRei';
@@ -19,6 +21,7 @@ import { configJerusalem } from './config/configJerusalem';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
@@ -28,6 +31,7 @@ function App() {
           {/* Páginas Extras */}
           <Route path="em-breve" element={<PlaceholderPage />} />
           <Route path="contato" element={<ContactPage />} />
+          <Route path="autor" element={<AuthorPage />} />
           <Route path="privacidade" element={<LegalPage title="Política de Privacidade"><p>A Editora O Chamado da Graça tem o compromisso com a privacidade e a segurança de seus clientes durante todo o processo de navegação e compra pelo site.</p>
 <p>Os dados cadastrais dos clientes não são vendidos, trocados ou divulgados para terceiros, exceto quando essas informações são necessárias para o processo de entrega, para cobrança, ou para participação em promoções solicitadas pelos clientes.</p>
 <h3>1. Coleta de Informações</h3>

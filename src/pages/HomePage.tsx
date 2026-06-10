@@ -21,7 +21,7 @@ export function HomePage() {
       <section style={{ display: 'flex', minHeight: '600px', backgroundColor: '#FAFAF8' }}>
         {/* Sidebar Categories (Hide on small screens) */}
         <aside style={{ width: '280px', backgroundColor: '#333', color: '#fff', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-          <h3 style={{ textTransform: 'uppercase', marginBottom: '1.5rem', fontSize: '1.2rem', letterSpacing: '1px', borderBottom: '1px solid #444', paddingBottom: '1rem' }}>CATEGORIES</h3>
+          <h3 style={{ textTransform: 'uppercase', marginBottom: '1.5rem', fontSize: '1.2rem', letterSpacing: '1px', borderBottom: '1px solid #444', paddingBottom: '1rem' }}>CATEGORIAS</h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <li><Link to="/#livros" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Lançamentos</Link></li>
             <li><Link to="/orando" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Vida de Oração</Link></li>
@@ -95,19 +95,19 @@ export function HomePage() {
       <section id="livros" className="section-padding" style={{ backgroundColor: '#FAFAF8' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem' }}>TOP INTERESTING</h2>
+            <h2 style={{ fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem' }}>MAIS VENDIDOS</h2>
             <p style={{ color: '#777', maxWidth: '600px', margin: '0 auto' }}>Navegue pela coleção dos nossos livros mais vendidos. Você certamente encontrará o que busca.</p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '2rem', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
-              <span style={{ borderBottom: '2px solid var(--theme-yellow)', paddingBottom: '0.5rem', cursor: 'pointer' }}>NEW ARRIVAL</span>
-              <span style={{ color: '#777', cursor: 'pointer' }}>ON SALE</span>
-              <span style={{ color: '#777', cursor: 'pointer' }}>FEATURED PRODUCTS</span>
+              <span style={{ borderBottom: '2px solid var(--theme-yellow)', paddingBottom: '0.5rem', cursor: 'pointer' }}>LANÇAMENTO</span>
+              <span style={{ color: '#777', cursor: 'pointer' }}>PROMOÇÃO</span>
+              <span style={{ color: '#777', cursor: 'pointer' }}>EM DESTAQUE</span>
             </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', justifyContent: 'center' }}>
             {books.map((b, i) => (
               <div key={i} className="product-card">
-                <div className="product-badge-new">NEW</div>
+                <div className="product-badge-new">NOVO</div>
                 <Link to={b.link}>
                   <div style={{ padding: '2rem 2rem 0 2rem', backgroundColor: '#f9f9f9', borderBottom: '1px solid #eee' }}>
                     <img src={b.img} alt={b.title} style={{ width: '100%', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }} />
@@ -119,7 +119,7 @@ export function HomePage() {
                   <span style={{ color: '#14B8A6', fontWeight: 'bold' }}>{b.price}</span>
                   <span style={{ color: '#ccc', textDecoration: 'line-through' }}>{b.oldPrice}</span>
                 </div>
-                <Link to={b.link} className="btn" style={{ backgroundColor: '#fff', color: '#111', border: '1px solid #ccc', padding: '0.4rem 1rem', fontSize: '0.8rem' }}>View Details</Link>
+                <Link to={b.link} className="btn" style={{ backgroundColor: '#fff', color: '#111', border: '1px solid #ccc', padding: '0.4rem 1rem', fontSize: '0.8rem' }}>Ver Detalhes</Link>
               </div>
             ))}
           </div>
@@ -130,13 +130,13 @@ export function HomePage() {
       <section className="section-padding" style={{ backgroundColor: '#fff' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>LATEST FROM OUR BLOG</h2>
+            <h2 style={{ fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>ÚLTIMAS DO NOSSO BLOG</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {blogArticles.slice(0,3).map((article) => {
                // Pseudo date extraction
                const day = "06";
-               const month = "DEC";
+               const month = "DEZ";
                
                return (
               <div key={article.id} className="blog-card" style={{ display: 'flex', flexDirection: 'column' }}>
@@ -151,7 +151,7 @@ export function HomePage() {
                 </Link>
                 <div style={{ padding: '1.5rem', textAlign: 'center' }}>
                   <h3 style={{ fontSize: '1.3rem', color: '#222', marginBottom: '1rem' }}>{article.title}</h3>
-                  <p style={{ color: '#777', fontSize: '0.9rem', marginBottom: '1rem' }}>Demo Postthemes</p>
+                  <p style={{ color: '#777', fontSize: '0.9rem', marginBottom: '1rem' }}>Artigo em Destaque</p>
                   <p style={{ color: '#555', lineHeight: '1.6', fontSize: '0.95rem' }}>{article.excerpt}</p>
                 </div>
               </div>
