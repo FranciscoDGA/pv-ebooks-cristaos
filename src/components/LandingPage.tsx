@@ -1,4 +1,3 @@
-
 import { CollectionSection } from './CollectionSection';
 import { HeroSection } from './HeroSection';
 import { QuoteSection } from './QuoteSection';
@@ -14,7 +13,8 @@ import { BonusSection } from './BonusSection';
 import { TestimonialsSection } from './TestimonialsSection';
 import { OfferSection } from './OfferSection';
 import { FAQSection } from './FAQSection';
-import { FooterSection } from './FooterSection';\nimport { CrossSellSection } from './CrossSellSection';
+import { FooterSection } from './FooterSection';
+import { CrossSellSection } from './CrossSellSection';
 
 export function LandingPage({ config }: { config: any }) {
   if (!config) return <div style={{textAlign:'center', padding: '100px'}}>Página não encontrada</div>;
@@ -35,7 +35,8 @@ export function LandingPage({ config }: { config: any }) {
       <BonusSection config={config} />
       <TestimonialsSection config={config} />
       <OfferSection config={config} />
-      <FAQSection config={config} />\n      <CrossSellSection />
+      <FAQSection config={config} />
+      <CrossSellSection />
       <FooterSection config={config} />
     </>
   );
