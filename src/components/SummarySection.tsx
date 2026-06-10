@@ -6,13 +6,13 @@ export function SummarySection() {
     <section className="section-padding summary-section">
       <div className="container">
         <div className="summary-header">
-          <h2>Sumário da Obra</h2>
+          <h2>Sumï¿½rio da Obra</h2>
           <div className="summary-meta">
-            <span>{summary.pageCount} páginas</span>
-            <span>•</span>
+            <span>{summary.pageCount} pï¿½ginas</span>
+            <span>ï¿½</span>
             <span>Tempo de leitura: {summary.readingTime}</span>
-            <span>•</span>
-            <span>Nível: {summary.level}</span>
+            <span>ï¿½</span>
+            <span>Nï¿½vel: {summary.level}</span>
           </div>
         </div>
         <div className="modules-list">

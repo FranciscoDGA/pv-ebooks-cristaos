@@ -5,7 +5,7 @@ export function FeaturesSection() {
   return (
     <section className="section-padding">
       <div className="container">
-        <h2 className="features-title">O que você encontrará</h2>
+        <h2 className="features-title">O que vocï¿½ encontrarï¿½</h2>
         <div className="features-grid">
           {features.map((feature, idx) => (
             <div key={idx} className="feature-card">

@@ -7,7 +7,7 @@ export function FooterSection() {
       <div className="container">
         <div className="footer-links">
           <a href={footer.termsLink}>Termos de Uso</a>
-          <a href={footer.privacyLink}>Política de Privacidade</a>
+          <a href={footer.privacyLink}>Polï¿½tica de Privacidade</a>
           <a href={footer.contactLink}>Contato</a>
         </div>
         <p className="footer-disclaimer">{footer.disclaimer}</p>

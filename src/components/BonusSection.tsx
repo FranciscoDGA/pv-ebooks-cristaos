@@ -5,7 +5,7 @@ export function BonusSection() {
   return (
     <section className="section-padding bonus-section">
       <div className="container">
-        <h2 className="bonus-title">Bônus Exclusivos</h2>
+        <h2 className="bonus-title">Bï¿½nus Exclusivos</h2>
         <div className="bonus-grid">
           {bonuses.map((bonus, idx) => (
             <div key={idx} className="bonus-card">

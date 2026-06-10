@@ -5,7 +5,7 @@ export function TargetAudienceSection() {
   return (
     <section className="section-padding audience-section">
       <div className="container">
-        <h2 className="audience-title">Para quem este livro é?</h2>
+        <h2 className="audience-title">Para quem este livro ï¿½?</h2>
         <div className="audience-grid">
           {audience.map((item, idx) => (
             <div key={idx} className="audience-item">{item}</div>

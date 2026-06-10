@@ -10,10 +10,10 @@ export function OfferSection() {
           <p className="offer-old-price">De {offer.oldPrice}</p>
           <div className="offer-price">{offer.price}</div>
           <p className="offer-methods">Pagamento via {offer.paymentMethods}</p>
-          <a href={offer.checkoutLink} className="btn btn-primary" style={{width: '100%'}}>Quero Começar a Leitura</a>
+          <a href={offer.checkoutLink} className="btn btn-primary" style={{width: '100%'}}>Quero Comeï¿½ar a Leitura</a>
           <div className="offer-guarantee">
             <span>?? Ambiente seguro</span>
-            <span>•</span>
+            <span>ï¿½</span>
             <span>Garantia de {offer.guaranteeDays} dias</span>
           </div>
         </div>
