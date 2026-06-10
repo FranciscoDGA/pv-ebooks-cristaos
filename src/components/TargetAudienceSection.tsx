@@ -1,13 +1,12 @@
 export function TargetAudienceSection({ config }: { config: any }) {
-  const { audience } = config;
   return (
-    <section className="section-padding audience-section">
+    <section id="audience" className="section-padding">
       <div className="container">
-        <h2 className="audience-title">Para quem este livro �?</h2>
+        <h2 className="audience-title">Para quem este livro é?</h2>
         <div className="audience-grid">
-          {audience.map((item: any, idx: number) => (
-            <div key={idx} className="audience-item">{item}</div>
-          ))}
+          <div className="audience-box">
+            <p className="audience-desc">{config.audience}</p>
+          </div>
         </div>
       </div>
     </section>
