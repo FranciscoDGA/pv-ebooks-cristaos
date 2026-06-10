@@ -1,7 +1,5 @@
-import { bookConfig } from '../config/bookConfig';
-
-export function SummarySection() {
-  const { summary } = bookConfig;
+export function SummarySection({ config }: { config: any }) {
+  const { summary } = config;
   return (
     <section className="section-padding summary-section">
       <div className="container">
@@ -16,7 +14,7 @@ export function SummarySection() {
           </div>
         </div>
         <div className="modules-list">
-          {summary.modules.map((mod, idx) => (
+          {summary.modules.map((mod: any, idx: number) => (
             <div key={idx} className="module-item">
               <h3 className="module-title">{mod.title}</h3>
               <p className="module-desc">{mod.description}</p>

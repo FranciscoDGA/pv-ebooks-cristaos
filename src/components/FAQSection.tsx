@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { bookConfig } from '../config/bookConfig';
-
-export function FAQSection() {
-  const { faq } = bookConfig;
+export function FAQSection({ config }: { config: any }) {
+  const { faq } = config;
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   const toggle = (idx: number) => {
@@ -15,7 +13,7 @@ export function FAQSection() {
       <div className="container">
         <h2 className="faq-title">Perguntas Frequentes</h2>
         <div className="faq-list">
-          {faq.map((item, idx) => (
+          {faq.map((item: any, idx: number) => (
             <div key={idx} className={`faq-item ${openIdx === idx ? 'active' : ''}`}>
               <button className="faq-question" onClick={() => toggle(idx)}>
                 {item.question}

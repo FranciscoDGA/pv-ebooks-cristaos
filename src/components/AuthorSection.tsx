@@ -1,7 +1,5 @@
-import { bookConfig } from '../config/bookConfig';
-
-export function AuthorSection() {
-  const { author } = bookConfig;
+export function AuthorSection({ config }: { config: any }) {
+  const { author } = config;
   return (
     <section className="section-padding">
       <div className="container author-grid">

@@ -1,7 +1,5 @@
-import { bookConfig } from '../config/bookConfig';
-
-export function FooterSection() {
-  const { footer } = bookConfig;
+export function FooterSection({ config }: { config: any }) {
+  const { footer } = config;
   return (
     <footer className="footer">
       <div className="container">

@@ -1,7 +1,5 @@
-import { bookConfig } from '../config/bookConfig';
-
-export function QuoteSection() {
-  const { quotes } = bookConfig;
+export function QuoteSection({ config }: { config: any }) {
+  const { quotes } = config;
   return (
     <section className="quote-section">
       <div className="container">

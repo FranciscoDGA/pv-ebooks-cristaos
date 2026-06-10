@@ -1,7 +1,5 @@
-import { bookConfig } from '../config/bookConfig';
-
-export function OfferSection() {
-  const { offer } = bookConfig;
+export function OfferSection({ config }: { config: any }) {
+  const { offer } = config;
   return (
     <section className="section-padding offer-section">
       <div className="container">

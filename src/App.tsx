@@ -1,35 +1,25 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './index.css';
 import './App.css';
 
-import { HeroSection } from './components/HeroSection';
-import { AboutBookSection } from './components/AboutBookSection';
-import { FeaturesSection } from './components/FeaturesSection';
-import { SummarySection } from './components/SummarySection';
-import { TargetAudienceSection } from './components/TargetAudienceSection';
-import { QuoteSection } from './components/QuoteSection';
-import { AuthorSection } from './components/AuthorSection';
-import { BonusSection } from './components/BonusSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { OfferSection } from './components/OfferSection';
-import { FAQSection } from './components/FAQSection';
-import { FooterSection } from './components/FooterSection';
+import { LandingPage } from './components/LandingPage';
+import { configOrando } from './config/configOrando';
+import { configRei } from './config/configRei';
+import { configChora } from './config/configChora';
+import { configJerusalem } from './config/configJerusalem';
 
 function App() {
   return (
-    <>
-      <HeroSection />
-      <AboutBookSection />
-      <FeaturesSection />
-      <SummarySection />
-      <TargetAudienceSection />
-      <QuoteSection />
-      <AuthorSection />
-      <BonusSection />
-      <TestimonialsSection />
-      <OfferSection />
-      <FAQSection />
-      <FooterSection />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/orando" element={<LandingPage config={configOrando} />} />
+        <Route path="/quando-nao-ha-rei" element={<LandingPage config={configRei} />} />
+        <Route path="/quem-ainda-chora" element={<LandingPage config={configChora} />} />
+        <Route path="/somos-todos-jerusalem" element={<LandingPage config={configJerusalem} />} />
+        {/* Default route redirects to one of the books */}
+        <Route path="*" element={<Navigate to="/orando" replace />} />
+      </Routes>
+    </Router>
   );
 }
 

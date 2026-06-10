@@ -1,7 +1,5 @@
-import { bookConfig } from '../config/bookConfig';
-
-export function HeroSection() {
-  const { hero } = bookConfig;
+export function HeroSection({ config }: { config: any }) {
+  const { hero } = config;
   return (
     <section className="hero-section">
       <div className="container hero-grid">
@@ -12,12 +10,12 @@ export function HeroSection() {
           <p className="hero-description">{hero.description}</p>
           
           <div className="hero-actions">
-            <a href={bookConfig.offer.checkoutLink} className="btn btn-primary">Comprar Agora</a>
+            <a href={config.offer.checkoutLink} className="btn btn-primary">Comprar Agora</a>
             <a href="#about" className="btn btn-secondary">Ler Amostra</a>
           </div>
           
           <ul className="hero-guarantees">
-            {hero.guarantees.map((item, idx) => (
+            {hero.guarantees.map((item: any, idx: number) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>

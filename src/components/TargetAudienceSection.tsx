@@ -1,13 +1,11 @@
-import { bookConfig } from '../config/bookConfig';
-
-export function TargetAudienceSection() {
-  const { audience } = bookConfig;
+export function TargetAudienceSection({ config }: { config: any }) {
+  const { audience } = config;
   return (
     <section className="section-padding audience-section">
       <div className="container">
         <h2 className="audience-title">Para quem este livro �?</h2>
         <div className="audience-grid">
-          {audience.map((item, idx) => (
+          {audience.map((item: any, idx: number) => (
             <div key={idx} className="audience-item">{item}</div>
           ))}
         </div>
