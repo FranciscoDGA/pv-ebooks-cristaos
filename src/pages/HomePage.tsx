@@ -134,13 +134,15 @@ export function HomePage() {
               <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>365 Dias, 30 Dias com Deus</p>
             </div>
 
-            <div style={{ backgroundColor: '#F97316', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Livros Infantis</h3>
-                <Link to="/historias-para-dormir" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ver Livro &gt;</Link>
+            <Link to="/historias-para-dormir" style={{ textDecoration: 'none' }}>
+              <div style={{ backgroundColor: '#F97316', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px', cursor: 'pointer', height: '100%' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <h3 style={{ fontSize: '1.5rem', margin: 0, color: '#fff' }}>Livros Infantis</h3>
+                  <span style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ver Livro &gt;</span>
+                </div>
+                <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9, color: '#fff' }}>Histórias da Bíblia Para Dormir</p>
               </div>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>Histórias da Bíblia Para Dormir</p>
-            </div>
+            </Link>
 
           </div>
         </div>
@@ -207,9 +209,10 @@ export function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
             {blogArticles.slice(0,3).map((article) => {
-               // Pseudo date extraction
-               const day = "06";
-               const month = "DEZ";
+               // Extract from "10 Jun 2026"
+               const dateParts = article.date.split(" ");
+               const day = dateParts[0] || "01";
+               const month = dateParts[1] ? dateParts[1].toUpperCase() : "JAN";
                
                return (
               <div key={article.id} className="blog-card" style={{ display: 'flex', flexDirection: 'column' }}>
