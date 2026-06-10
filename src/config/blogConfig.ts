@@ -4,7 +4,7 @@ export const blogArticles = [
     title: "Jeremias 9:1 explicado: Quem foi o profeta chorão?",
     excerpt: "Por que Jeremias chorava tanto? Entenda o que significa ter um coração quebrantado pelas mesmas coisas que quebrantam o coração de Deus.",
     category: "Profetas",
-    date: "10 Jun 2026",
+    date: "10 Jun 2026", thumbnail: "/article_jeremias.png",
     readTime: "5 min",
     content: `
 A imagem de um profeta frequentemente evoca dureza, julgamento e palavras implacáveis. No entanto, quando olhamos para Jeremias, encontramos um homem cujas bochechas estavam perpetuamente molhadas. Em Jeremias 9:1, ele clama: *"Quem dera a minha cabeça fosse um poço de água e os meus olhos uma fonte de lágrimas, para que eu chorasse de dia e de noite pelos mortos da filha do meu povo!"*
@@ -33,7 +33,7 @@ Se você olha para o mundo e não sente nada, talvez o seu coração precise ser
     title: "Por que Jesus chorou sobre Jerusalém?",
     excerpt: "A dor do Messias rejeitado revela o escândalo da graça e o convite à restauração para aqueles que O negaram.",
     category: "Graça",
-    date: "08 Jun 2026",
+    date: "08 Jun 2026", thumbnail: "/article_cruz.png",
     readTime: "6 min",
     content: `
 Lucas 19:41 descreve uma das cenas mais comoventes dos Evangelhos: *"Quando ia chegando, vendo a cidade, chorou e dizia: Ah! Se conheceras por ti mesma, ainda hoje, o que é devido à paz!"*
@@ -62,7 +62,7 @@ A graça devia começar exatamente com aqueles que o mataram! A cidade que rejei
     title: "O que é oração integral? Entendendo o corpo, alma e espírito",
     excerpt: "Você tem orado com apenas uma parte de quem você é? Descubra o poder de adorar a Deus em sua totalidade.",
     category: "Vida de Oração",
-    date: "05 Jun 2026",
+    date: "05 Jun 2026", thumbnail: "/article_oracao.png",
     readTime: "8 min",
     content: `
 A cultura ocidental nos ensinou a separar o ser humano em caixas: o que é físico não afeta o espiritual, e o que é mental não tem nada a ver com o corpo. Mas a Bíblia não ensina isso. 
@@ -91,7 +91,7 @@ Se você tem orado com o corpo exausto e a alma distante, está na hora de desco
     title: "Juízes 21:25 explicado: O perigo da autonomia espiritual",
     excerpt: "Quando Deus é destronado, a anarquia toma conta do coração humano. Uma análise profunda sobre o colapso moral sem liderança.",
     category: "Igreja",
-    date: "02 Jun 2026",
+    date: "02 Jun 2026", thumbnail: "/home_hero_bg.png",
     readTime: "7 min",
     content: `
 O livro de Juízes termina com um dos versículos mais assustadores de toda a Bíblia: *"Naqueles dias não havia rei em Israel; porém cada um fazia o que parecia reto aos seus olhos."* (Juízes 21:25).
