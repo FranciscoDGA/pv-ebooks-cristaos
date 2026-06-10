@@ -62,28 +62,28 @@ export function HomePage() {
             <div style={{ backgroundColor: '#0EA5E9', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
               <div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Estudos da Graça</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Ver Coleção ></Link>
+                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Ver Coleção &gt;</Link>
               </div>
             </div>
 
             <div style={{ backgroundColor: '#FACC15', padding: '2rem', color: '#111', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
               <div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Vida de Oração</h3>
-                <Link to="/orando" style={{ color: '#111', fontWeight: 'bold', textDecoration: 'underline' }}>Ler Livro ></Link>
+                <Link to="/orando" style={{ color: '#111', fontWeight: 'bold', textDecoration: 'underline' }}>Ler Livro &gt;</Link>
               </div>
             </div>
 
             <div style={{ backgroundColor: '#F97316', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
               <div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Livros Infantis</h3>
-                <Link to="/" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Em Breve ></Link>
+                <Link to="/" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Em Breve &gt;</Link>
               </div>
             </div>
 
             <div style={{ backgroundColor: '#14B8A6', padding: '2rem', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderRadius: '4px' }}>
               <div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Consolo</h3>
-                <Link to="/quem-ainda-chora" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Ler Livro ></Link>
+                <Link to="/quem-ainda-chora" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline' }}>Ler Livro &gt;</Link>
               </div>
             </div>
 
