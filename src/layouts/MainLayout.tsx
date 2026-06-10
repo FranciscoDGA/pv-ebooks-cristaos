@@ -1,7 +1,18 @@
-
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export function MainLayout() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [hash]);
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <header style={{ background: '#0F172A', color: '#fff', padding: '1rem 0' }}>
@@ -23,9 +34,9 @@ export function MainLayout() {
             <h4 style={{ color: '#fff', marginBottom: '1.5rem', fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem' }}>Coleções</h4>
             <ul style={{ listStyle: 'none', padding: 0, lineHeight: '2' }}>
               <li><Link to="/#livros" style={{ color: 'inherit', textDecoration: 'none' }}>A Cruz e o Coração Humano</Link></li>
-              <li><Link to="/em-breve" style={{ color: 'inherit', textDecoration: 'none' }}>Vida de Oração</Link></li>
-              <li><Link to="/em-breve" style={{ color: 'inherit', textDecoration: 'none' }}>Profetas</Link></li>
-              <li><Link to="/em-breve" style={{ color: 'inherit', textDecoration: 'none' }}>Igreja e Sociedade</Link></li>
+              <li><Link to="/orando" style={{ color: 'inherit', textDecoration: 'none' }}>Vida de Oração</Link></li>
+              <li><Link to="/quem-ainda-chora" style={{ color: 'inherit', textDecoration: 'none' }}>Profetas</Link></li>
+              <li><Link to="/somos-todos-jerusalem" style={{ color: 'inherit', textDecoration: 'none' }}>Igreja e Sociedade</Link></li>
             </ul>
           </div>
           <div style={{ flex: '1 1 200px' }}>
