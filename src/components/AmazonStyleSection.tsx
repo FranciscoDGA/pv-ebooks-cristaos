@@ -1,15 +1,11 @@
 
-export function AmazonStyleSection({ config }: { config: any }) {
-  if (!config.amazonStyle) return null;
+export function AmazonStyleSection() {
   return (
-    <section className="amazon-section">
-      <div className="container amazon-grid">
-        <div>
-          <h2 className="amazon-title">{config.amazonStyle.title}</h2>
-          <p className="amazon-text">{config.amazonStyle.description}</p>
-        </div>
-        <div>
-          <img src={config.amazonStyle.image} alt="Livro Aberto" className="amazon-image" />
+    <section className="amazon-section section-padding" style={{ backgroundColor: '#FAFAF8' }}>
+      <div className="container">
+        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 4rem auto' }}>
+          <h2 className="amazon-title">Uma coleção para ser lida devagar</h2>
+          <p className="amazon-text">Livros escritos em linguagem simples para crianças compreenderem e adultos sentirem. Reflexões que confrontam, edificam e conduzem o leitor a uma caminhada mais profunda com Deus.</p>
         </div>
       </div>
     </section>

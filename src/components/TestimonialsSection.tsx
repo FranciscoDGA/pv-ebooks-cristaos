@@ -1,17 +1,15 @@
+
 export function TestimonialsSection({ config }: { config: any }) {
-  const { testimonials } = config;
+  if (!config.testimonials) return null;
   return (
-    <section className="section-padding">
+    <section id="testimonials" className="section-padding bg-gray">
       <div className="container">
-        <h2 className="testimonials-title">O que os leitores dizem</h2>
-        <div className="testimonials-grid">
-          {testimonials.map((test: any, idx: number) => (
-            <div key={idx} className="testimonial-card">
-              <div className="stars">
-                {Array.from({length: test.stars}).map((_, i) => <span key={i}>?</span>)}
-              </div>
-              <p className="testimonial-text">"{test.text}"</p>
-              <h4 className="testimonial-name">{test.name}</h4>
+        <h2 className="section-title">O que os leitores dizem</h2>
+        <div className="testimonials-grid" style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          {config.testimonials.map((test: any, idx: number) => (
+            <div className="testimonial-editorial" key={idx} style={{ textAlign: 'center' }}>
+              <p className="testimonial-quote" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontStyle: 'italic', color: '#374151' }}>"{test.text}"</p>
+              <p className="testimonial-author" style={{ marginTop: '1rem', fontWeight: 'bold', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '0.9rem', color: '#9ca3af' }}>— {test.name}</p>
             </div>
           ))}
         </div>

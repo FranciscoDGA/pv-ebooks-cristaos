@@ -5,7 +5,7 @@ export function HeroSection({ config }: { config: any }) {
     <header className="hero">
       <div className="container hero-grid">
         <div className="hero-content">
-          <span className="hero-category">{hero.category}</span>
+          <span className="hero-category">COLEÇÃO DO REINO</span>
           <h1 className="hero-title">{hero.title}</h1>
           <p className="hero-subtitle">{hero.subtitle}</p>
           <p className="hero-description">{hero.description}</p>
