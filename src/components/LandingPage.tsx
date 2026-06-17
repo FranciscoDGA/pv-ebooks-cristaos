@@ -1,46 +1,37 @@
 import { Helmet } from 'react-helmet-async';
-import { CollectionSection } from './CollectionSection';
 import { HeroSection } from './HeroSection';
-import { QuoteSection } from './QuoteSection';
-import { AmazonStyleSection } from './AmazonStyleSection';
 import { AboutBookSection } from './AboutBookSection';
-import { BookPreviewSection } from './BookPreviewSection';
-import { IsForYouSection } from './IsForYouSection';
 import { FeaturesSection } from './FeaturesSection';
 import { SummarySection } from './SummarySection';
-import { TargetAudienceSection } from './TargetAudienceSection';
+import { IsForYouSection } from './IsForYouSection';
 import { AuthorSection } from './AuthorSection';
 import { BonusSection } from './BonusSection';
-import { TestimonialsSection } from './TestimonialsSection';
 import { OfferSection } from './OfferSection';
+import { TestimonialsSection } from './TestimonialsSection';
 import { FAQSection } from './FAQSection';
 import { CrossSellSection } from './CrossSellSection';
+import { QuoteSection } from './QuoteSection';
 
 export function LandingPage({ config }: { config: any }) {
   if (!config) return <div style={{textAlign:'center', padding: '100px'}}>Página não encontrada</div>;
-
   return (
-    <div className="font-sans">
+    <div>
       <Helmet>
-        <title>{config.hero?.title || 'Ebook'} | O Chamado da Graça</title>
-        <meta name="description" content={config.hero?.subtitle || ''} />
+        <title>{config.hero?.title || 'Ebook'} | Editora Graça</title>
+        <meta name="description" content={config.hero?.description || ''} />
       </Helmet>
-      <CollectionSection config={config} />
       <HeroSection config={config} />
-      <QuoteSection config={config} />
-      <AmazonStyleSection />
       <AboutBookSection config={config} />
-      <BookPreviewSection config={config} />
-      <IsForYouSection config={config} />
       <FeaturesSection config={config} />
       <SummarySection config={config} />
-      <TargetAudienceSection config={config} />
+      <IsForYouSection config={config} />
       <AuthorSection config={config} />
       <BonusSection config={config} />
-      <TestimonialsSection config={config} />
       <OfferSection config={config} />
+      <TestimonialsSection config={config} />
       <FAQSection config={config} />
       <CrossSellSection />
+      <QuoteSection config={config} />
     </div>
   );
 }
