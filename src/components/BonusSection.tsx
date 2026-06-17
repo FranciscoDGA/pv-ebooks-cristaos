@@ -1,19 +1,70 @@
-
 export function BonusSection({ config }: { config: any }) {
   if (!config.bonuses) return null;
+  const CREME_2 = '#efe6d6';
+  const DOURADO = '#b8863f';
+  const TINTA = '#2c2a26';
+  const CORPO = '#39322a';
+
   return (
-    <section id="bonuses" className="section-padding" style={{ backgroundColor: '#111827', color: '#fff' }}>
-      <div className="container">
+    <section style={{ background: CREME_2, padding: '96px 0' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 24px' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.5rem', color: '#FBBF24' }}>Bônus Exclusivos</h2>
-          <p style={{ color: '#D1D5DB' }}>Acompanham gratuitamente o e-book nesta oferta.</p>
+          <p style={{
+            fontFamily: "'EB Garamond', serif",
+            textTransform: 'uppercase',
+            letterSpacing: '0.3em',
+            color: DOURADO,
+            fontSize: '0.75rem',
+            marginBottom: '1rem',
+          }}>
+            Incluso na compra
+          </p>
+          <h2 style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 600,
+            fontSize: 'clamp(2rem, 4vw, 3rem)',
+            color: TINTA,
+          }}>
+            O que você recebe
+          </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {config.bonuses.map((bonus: any, idx: number) => (
-            <div key={idx} style={{ padding: '2rem', border: '1px solid #374151', borderRadius: '8px', textAlign: 'center', background: 'linear-gradient(145deg, #1F2937, #111827)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '1rem', color: '#FBBF24' }}>✦</div>
-              <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', color: '#F3F4F6', marginBottom: '0.5rem' }}>{bonus.title}</h3>
-              <p style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>De {bonus.value} por <strong style={{color: '#10B981'}}>R$ 0,00</strong></p>
+            <div key={idx} style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: '1.25rem',
+              padding: '1.5rem 2rem',
+              background: '#f4ede0',
+              borderRadius: '2px',
+            }}>
+              <span style={{
+                color: DOURADO,
+                fontSize: '1.3rem',
+                flexShrink: 0,
+                marginTop: '2px',
+              }}>✦</span>
+              <div>
+                <p style={{
+                  fontFamily: "'EB Garamond', serif",
+                  fontSize: '1.1rem',
+                  color: CORPO,
+                  lineHeight: 1.6,
+                }}>
+                  {bonus.title}
+                </p>
+                <p style={{
+                  fontFamily: "'EB Garamond', serif",
+                  fontSize: '0.85rem',
+                  color: DOURADO,
+                  marginTop: '0.25rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                }}>
+                  {bonus.value}
+                </p>
+              </div>
             </div>
           ))}
         </div>

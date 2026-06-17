@@ -52,6 +52,12 @@ const routes = [
     title: 'Histórias da Bíblia Para Dormir | Livros Infantis',
     description: 'Um livro encantador com histórias bíblicas adaptadas para a hora de dormir.',
     image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/historia_biblia_dormir.png'
+  },
+  {
+    path: '/cercados-mas-nao-sozinhos',
+    title: 'Cercados, mas Não Sozinhos | Pr. Francisco Gomes',
+    description: 'Quando o problema está à sua frente e a luta por dentro, há uma palavra de Deus para quem se sente cercado por todos os lados.',
+    image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/livros/cercados-mas-nao-sozinhos/mockup-escuro.png'
   }
 ];
 
