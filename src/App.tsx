@@ -12,6 +12,7 @@ import { LegalPage } from './pages/LegalPage';
 import { ContactPage } from './pages/ContactPage';
 import { AuthorPage } from './pages/AuthorPage';
 import { ScrollToTop } from './components/ScrollToTop';
+import { EbookSalesPage } from './pages/EbookSalesPage';
 
 import { configOrando } from './config/configOrando';
 import { configRei } from './config/configRei';
@@ -64,6 +65,7 @@ function App() {
           <Route path="historias-para-dormir" element={<LandingPage config={configDormir} />} />
           <Route path="cercados-mas-nao-sozinhos" element={<LandingPage config={configCercados} />} />
         </Route>
+        <Route path="ebooks/:slug" element={<EbookSalesPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

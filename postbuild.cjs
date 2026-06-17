@@ -58,6 +58,36 @@ const routes = [
     title: 'Cercados, mas Não Sozinhos | Pr. Francisco Gomes',
     description: 'Quando o problema está à sua frente e a luta por dentro, há uma palavra de Deus para quem se sente cercado por todos os lados.',
     image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/livros/cercados-mas-nao-sozinhos/mockup-escuro.png'
+  },
+  {
+    path: '/ebooks/orando',
+    title: 'Orando com o Corpo, a Alma e o Espírito | Editora Graça',
+    description: 'Descubra como envolver todo o seu ser na adoração a Deus e transformar sua vida de oração.',
+    image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/orando_com_corpo_alma_espirito_1781101893485.png'
+  },
+  {
+    path: '/ebooks/quando-nao-ha-rei',
+    title: 'Quando Não Há Rei | Editora Graça',
+    description: 'O colapso de um povo sem liderança espiritual. Uma análise profunda sobre Juízes.',
+    image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/quando_nao_ha_rei_1781101904540.png'
+  },
+  {
+    path: '/ebooks/quem-ainda-chora',
+    title: 'Quem Ainda Chora? | Editora Graça',
+    description: 'Deus ouviu o choro de Raquel e ainda ouve o seu. Uma mensagem de consolo e restauração.',
+    image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/quem_ainda_chora_1781101915571.png'
+  },
+  {
+    path: '/ebooks/somos-todos-jerusalem',
+    title: 'Somos Todos Jerusalém | Editora Graça',
+    description: 'O perdão que transforma quem um dia negou a Cristo. Entenda a graça escandalosa de Deus.',
+    image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/somos_todos_jerusalem_1781101925943.png'
+  },
+  {
+    path: '/ebooks/cercados-mas-nao-sozinhos',
+    title: 'Cercados, mas Não Sozinhos | Editora Graça',
+    description: 'Quando o problema está à sua frente e a luta por dentro, há uma palavra de Deus para quem se sente cercado por todos os lados.',
+    image: 'https://raw.githubusercontent.com/FranciscoDGA/pv-ebooks-cristaos/main/public/livros/cercados-mas-nao-sozinhos/mockup-escuro.png'
   }
 ];
 
