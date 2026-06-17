@@ -19,6 +19,7 @@ import { configChora } from './config/configChora';
 import { configJerusalem } from './config/configJerusalem';
 import { configColecao } from './config/configColecao';
 import { configDormir } from './config/configDormir';
+import { configCercados } from './config/configCercados';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
           <Route path="somos-todos-jerusalem" element={<LandingPage config={configJerusalem} />} />
           <Route path="colecao" element={<LandingPage config={configColecao} />} />
           <Route path="historias-para-dormir" element={<LandingPage config={configDormir} />} />
+          <Route path="cercados-mas-nao-sozinhos" element={<LandingPage config={configCercados} />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
