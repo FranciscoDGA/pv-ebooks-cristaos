@@ -11,6 +11,7 @@ import { TestimonialsSection } from './TestimonialsSection';
 import { FAQSection } from './FAQSection';
 import { CrossSellSection } from './CrossSellSection';
 import { QuoteSection } from './QuoteSection';
+import { NetflixShelfSection } from './NetflixShelfSection';
 
 export function LandingPage({ config }: { config: any }) {
   if (!config) return <div style={{textAlign:'center', padding: '100px'}}>Página não encontrada</div>;
@@ -21,6 +22,7 @@ export function LandingPage({ config }: { config: any }) {
         <meta name="description" content={config.hero?.description || ''} />
       </Helmet>
       <HeroSection config={config} />
+      <NetflixShelfSection />
       <AboutBookSection config={config} />
       <FeaturesSection config={config} />
       <SummarySection config={config} />
