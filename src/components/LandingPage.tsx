@@ -1,39 +1,47 @@
+import '../sales.css';
 import { Helmet } from 'react-helmet-async';
-import { HeroSection } from './HeroSection';
-import { AboutBookSection } from './AboutBookSection';
-import { FeaturesSection } from './FeaturesSection';
-import { SummarySection } from './SummarySection';
-import { IsForYouSection } from './IsForYouSection';
-import { AuthorSection } from './AuthorSection';
-import { BonusSection } from './BonusSection';
-import { OfferSection } from './OfferSection';
-import { TestimonialsSection } from './TestimonialsSection';
-import { FAQSection } from './FAQSection';
-import { CrossSellSection } from './CrossSellSection';
-import { QuoteSection } from './QuoteSection';
-import { NetflixShelfSection } from './NetflixShelfSection';
+import type { EbookConfig } from '../config/types';
+import {
+  EbookHero,
+  ProblemSection,
+  PromiseSection,
+  DiscoverSection,
+  ForWhomSection,
+  InsideBookSection,
+  MockupPreviewSection,
+  AuthorSection,
+  OfferSection,
+  BonusBenefitsSection,
+  TestimonialsSection,
+  FaqSection,
+  FinalCTA,
+  FooterSection
+} from './sales/SalesSections';
 
-export function LandingPage({ config }: { config: any }) {
+export function LandingPage({ config }: { config: EbookConfig }) {
   if (!config) return <div style={{textAlign:'center', padding: '100px'}}>Página não encontrada</div>;
+
   return (
-    <div>
+    <div className="font-sans sales-landing-wrapper">
       <Helmet>
-        <title>{config.hero?.title || 'Ebook'} | Editora Graça</title>
-        <meta name="description" content={config.hero?.description || ''} />
+        <title>{config.seo.title}</title>
+        <meta name="description" content={config.seo.description} />
       </Helmet>
-      <HeroSection config={config} />
-      <NetflixShelfSection />
-      <AboutBookSection config={config} />
-      <FeaturesSection config={config} />
-      <SummarySection config={config} />
-      <IsForYouSection config={config} />
+      
+      <EbookHero config={config} />
+      <ProblemSection config={config} />
+      <PromiseSection config={config} />
+      <DiscoverSection config={config} />
+      <ForWhomSection config={config} />
+      <InsideBookSection config={config} />
+      <MockupPreviewSection config={config} />
       <AuthorSection config={config} />
-      <BonusSection config={config} />
       <OfferSection config={config} />
+      <BonusBenefitsSection config={config} />
       <TestimonialsSection config={config} />
-      <FAQSection config={config} />
-      <CrossSellSection />
-      <QuoteSection config={config} />
+      <FaqSection config={config} />
+      <FinalCTA config={config} />
+      <FooterSection config={config} />
     </div>
   );
 }
