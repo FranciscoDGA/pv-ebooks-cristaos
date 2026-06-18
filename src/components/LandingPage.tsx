@@ -14,8 +14,7 @@ import {
   BonusBenefitsSection,
   TestimonialsSection,
   FaqSection,
-  FinalCTA,
-  FooterSection
+  FinalCTA
 } from './sales/SalesSections';
 
 export function LandingPage({ config }: { config: EbookConfig }) {
@@ -41,7 +40,6 @@ export function LandingPage({ config }: { config: EbookConfig }) {
       <TestimonialsSection config={config} />
       <FaqSection config={config} />
       <FinalCTA config={config} />
-      <FooterSection config={config} />
     </div>
   );
 }
