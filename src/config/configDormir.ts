@@ -8,8 +8,8 @@ export const configDormir: EbookConfig = {
     title: "Histórias Para Dormir",
     subtitle: "Contos bíblicos para ensinar e acalmar o coração das crianças.",
     description: "Uma coletânea de histórias bíblicas adaptadas para o momento de dormir, trazendo paz, ensino e a presença de Deus para o quarto dos seus filhos.",
-    coverImage: "/dormir_1781101925943.png", // placeholder
-    mockupImage: "/dormir_1781101925943.png",
+    coverImage: "/historia_biblia_dormir.png",
+    mockupImage: "/historia_biblia_dormir.png",
     guarantees: [
       "Download imediato",
       "PDF em alta qualidade",

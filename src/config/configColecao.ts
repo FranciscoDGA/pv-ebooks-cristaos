@@ -8,8 +8,8 @@ export const configColecao: EbookConfig = {
     title: "Coleção A Cruz e o Coração Humano",
     subtitle: "O acervo completo para transformar sua jornada espiritual",
     description: "Tenha acesso a todos os títulos da série com um desconto especial. Mergulhe em temas de oração, arrependimento, liderança e muito mais.",
-    coverImage: "/colecao_1781101925943.png", // placeholder
-    mockupImage: "/colecao_1781101925943.png",
+    coverImage: "/christian_book_cover.png", // placeholder
+    mockupImage: "/christian_book_cover.png",
     guarantees: [
       "Download imediato",
       "PDFs em alta qualidade",

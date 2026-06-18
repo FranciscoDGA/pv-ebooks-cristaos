@@ -8,8 +8,8 @@ export const configRei: EbookConfig = {
     title: "Quando Não Há Rei",
     subtitle: "A crise de liderança e a anarquia no coração humano",
     description: "Um estudo profundo sobre o período dos Juízes e os perigos de uma vida governada pelas próprias regras, sem a submissão ao verdadeiro Rei.",
-    coverImage: "/rei_1781101925943.png",
-    mockupImage: "/rei_1781101925943.png",
+    coverImage: "/quando_nao_ha_rei_1781101904540.png",
+    mockupImage: "/quando_nao_ha_rei_1781101904540.png",
     guarantees: [
       "Download imediato",
       "PDF em alta qualidade",

@@ -8,8 +8,8 @@ export const configOrando: EbookConfig = {
     title: "Orando com o Corpo, a Alma e o Espírito",
     subtitle: "O guia prático para transformar sua vida de oração",
     description: "Aprenda a orar de forma integral, envolvendo todo o seu ser: corpo, alma e espírito. Descubra como aprofundar sua comunhão com Deus e experimentar uma vida de oração poderosa e constante.",
-    coverImage: "/orando_1781101925943.png",
-    mockupImage: "/orando_1781101925943.png",
+    coverImage: "/orando_com_corpo_alma_espirito_1781101893485.png",
+    mockupImage: "/orando_com_corpo_alma_espirito_1781101893485.png",
     guarantees: [
       "Download imediato",
       "PDF em alta qualidade",
