@@ -92,22 +92,22 @@ export function MainLayout() {
           </p>
           
           <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '3rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-            <Link to="/#livros" style={{ color: '#fff', textDecoration: 'none' }}>Livros</Link>
-            <Link to="/blog" style={{ color: '#fff', textDecoration: 'none' }}>Blog</Link>
+            <Link to="/#biblioteca" style={{ color: '#fff', textDecoration: 'none' }}>Livros</Link>
+            <Link to="/#colecoes" style={{ color: '#fff', textDecoration: 'none' }}>Coleções</Link>
             <Link to="/autor" style={{ color: '#fff', textDecoration: 'none' }}>Autor</Link>
+            <Link to="/blog" style={{ color: '#fff', textDecoration: 'none' }}>Blog</Link>
             <Link to="/contato" style={{ color: '#fff', textDecoration: 'none' }}>Contato</Link>
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '4rem', fontSize: '1.25rem', color: '#c5a880' }}>
             <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}><i className="fa-brands fa-instagram"></i></a>
-            <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}><i className="fa-brands fa-facebook"></i></a>
           </div>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: '#475569' }}>
-            <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} Editora O Chamado da Graça. Todos os direitos reservados.</p>
+            <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} Editora O Chamado da Graça.</p>
             <div style={{ display: 'flex', gap: '1.5rem' }}>
               <Link to="/privacidade" style={{ color: 'inherit', textDecoration: 'none' }}>Política de Privacidade</Link>
-              <Link to="/termos" style={{ color: 'inherit', textDecoration: 'none' }}>Termos de Uso</Link>
+              <Link to="/termos" style={{ color: 'inherit', textDecoration: 'none' }}>Termos</Link>
             </div>
           </div>
         </div>
