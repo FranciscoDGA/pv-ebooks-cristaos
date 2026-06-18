@@ -2,110 +2,118 @@ import type { EbookConfig } from './types';
 
 export const configCercados: EbookConfig = {
   slug: "cercados-mas-nao-sozinhos",
-  themeColor: "#8b6508", // Aço / Dourado
+  themeColor: "#c5a880",
   hero: {
-    category: "TEOLOGIA • VIDA CRISTÃ",
-    title: "Cercados, mas Não Sozinhos",
-    subtitle: "Joabe e Abisai, e a coragem de enfrentar a batalha de duas frentes",
-    description: "Quando o problema está à sua frente e a luta por dentro, há uma palavra de Deus para quem se sente cercado por todos os lados — uma jornada pelo coração de 1 Crônicas 19.",
-    coverImage: "/livros/cercados-mas-nao-sozinhos/mockup-escuro.png",
-    mockupImage: "/livros/cercados-mas-nao-sozinhos/mockup-escuro.png",
-    guarantees: [
-      "Download imediato",
-      "PDF em alta qualidade",
-      "Acesso vitalício",
-      "Leitura em qualquer dispositivo"
+    category: "CONSOLO E ESPERANÇA",
+    title: "Cercados, Mas Não Sozinhos",
+    subtitle: "A presença de Deus no meio da angústia.",
+    checklist: [
+      "Leitura imediata",
+      "PDF completo",
+      "Compatível com celular, tablet e computador",
+      "Acesso vitalício"
     ],
+    primaryButtonText: "Quero começar minha leitura",
+    secondaryButtonText: "Ver prévia",
+    coverImage: "/cercados.png",
+    mockupImage: "/cercados.png"
   },
-  problem: {
-    title: "A vida raramente nos cerca por um lado só",
-    description: "Há momentos em que o coração aperta diante da sensação de estar espremido, sem retaguarda, sem saída. Foi exatamente assim que Joabe se viu no vale de 1 Crônicas 19 — com o exército sírio à frente e os filhos de Amom atrás.",
-    question: "Como você age quando está lutando em duas frentes ao mesmo tempo?"
-  },
-  promise: {
-    title: "Coragem e Descanso na Fé",
-    description: "Escrevi este livro para quem já sentiu o coração apertar diante de um cerco que não escolheu. A resposta de Joabe não é de um super-herói — é de um homem que confiou a Deus o que não podia controlar, e agiu com coragem no que estava ao seu alcance."
-  },
-  discover: {
-    title: "O Que Você Vai Descobrir",
-    items: [
-      { icon: "shield", title: "O Pacto dos Irmãos", description: "Por que ninguém foi feito para lutar sozinho." },
-      { icon: "heart", title: "Coragem que Age", description: "O equilíbrio entre esforço humano e entrega a Deus." },
-      { icon: "eye", title: "Olhando o Perigo", description: "Como olhar o perigo de frente sem ser dominado por ele." },
-      { icon: "crown", title: "O Rei na Batalha", description: "O Rei que desceu pessoalmente ao campo de batalha." }
+  identification: {
+    title: "A solidão em meio às lutas tem esmagado você?",
+    paragraphs: [
+      "Em momentos de profunda crise, parece que até Deus nos abandonou.",
+      "Mas a Bíblia garante que, mesmo quando estamos cercados por inimigos ou circunstâncias impossíveis, o Senhor está presente."
     ]
   },
-  audience: {
-    title: "Para Quem é Este E-book",
+  imagine: {
+    title: "Imagine sentir a paz no meio da tempestade.",
     items: [
-      "Quem está enfrentando batalhas em mais de uma frente",
-      "Quem se sente sozinho na luta e precisa de irmandade",
-      "Líderes, pais e servos cansados",
-      "Grupos, células e estudos bíblicos",
-      "Cristãos que desejam aprofundar 1 Crônicas 19"
+      "Imagine saber com certeza que Deus está cuidando de você.",
+      "Imagine dormir em paz mesmo com problemas lá fora.",
+      "Imagine fortalecer sua fé nas adversidades.",
+      "Imagine experimentar o consolo do Espírito Santo."
+    ]
+  },
+  discover: {
+    items: [
+      { icon: "fa-solid fa-shield", description: "O Senhor como nosso escudo." },
+      { icon: "fa-solid fa-eye-slash", description: "Enxergando o que os olhos naturais não veem." },
+      { icon: "fa-solid fa-hands-holding", description: "O consolo divino nas lágrimas." }
     ]
   },
   insideBook: {
-    title: "O Que Tem Dentro",
     chapters: [
-      { title: "Parte I: Como Nascem as Guerras", description: "A origem do conflito: a bondade recusada, a suspeita e o orgulho." },
-      { title: "Parte II: Cercado por Diante e por Detrás", description: "A batalha de duas frentes e a coragem de olhar o perigo." },
-      { title: "Parte III: O Pacto dos Irmãos", description: "Confiar, socorrer e lutar costas com costas." },
-      { title: "Parte IV: Esforça-te", description: "Coragem que age, causa que ergue os olhos e fé." },
-      { title: "Parte V: A Vitória que Vem de Deus", description: "O avanço, a vitória e o Rei que desce à batalha." }
+      { number: "01", title: "O Cerco", description: "Quando as lutas batem à porta." },
+      { number: "02", title: "Abra os Olhos", description: "A visão espiritual de Eliseu." },
+      { number: "03", title: "A Presença Oculta", description: "Deus agindo em silêncio." },
+      { number: "04", title: "A Libertação", description: "O socorro bem presente." }
     ]
   },
-  preview: {
-    title: "Dê uma Olhada por Dentro",
-    images: ["/sample_page_1.png", "/sample_page_2.png"]
+  gallery: {
+    bookOpenImage: "/cercados.png",
+    mobileImage: "/cercados.png",
+    tabletImage: "/cercados.png",
+    desktopImage: "/cercados.png"
   },
-  author: {
-    photo: "/author_pastoral.png",
-    name: "Pr. Francisco Gomes",
-    bio: "Pastor, Conferencista e Ensinador da Palavra. Vice-Presidente do MAJEV. Seu ministério é dedicado a chamar pessoas, lares e igrejas a destronarem o 'eu' e a coroarem Cristo."
-  },
-  offer: {
-    title: "Adquira o Seu Agora",
-    oldPrice: "R$ 39,90",
-    price: "R$ 19,90",
-    paymentMethods: "PIX e Cartões de Crédito",
-    checkoutLink: "https://pay.hotmart.com/SEU-LINK-AQUI",
-    guaranteeDays: 7,
-    inclusions: [
-      "E-book Completo em PDF",
-      "Acesso Imediato",
-      "Garantia Incondicional de 7 dias"
+  forWhom: {
+    items: [
+      "Cristãos passando por lutas difíceis",
+      "Pessoas que sofrem com ansiedade",
+      "Quem precisa de consolo bíblico",
+      "Líderes que aconselham os aflitos"
     ]
   },
   benefits: {
-    title: "Bônus Inclusos",
+    title: "O que você receberá",
     items: [
-      { title: "Guia de leitura e oração", description: "Para uso pessoal, em família ou em grupo." },
-      { title: "Reflexões 'Para pensar'", description: "Ao final de cada parte do livro." }
+      { icon: "fa-solid fa-book", title: "Ebook completo" },
+      { icon: "fa-solid fa-bolt", title: "Acesso imediato" },
+      { icon: "fa-solid fa-mobile-screen", title: "Leitura no celular" },
+      { icon: "fa-solid fa-laptop", title: "Compatível com computador" },
+      { icon: "fa-solid fa-infinity", title: "Acesso vitalício" },
+      { icon: "fa-solid fa-lock", title: "Pagamento seguro" }
+    ]
+  },
+  author: {
+    photo: "/author_pastoral.png",
+    name: "Editora O Chamado da Graça",
+    bioParagraphs: [
+      "Produzindo materiais de excelência para abençoar a Igreja Brasileira.",
+      "Comprometidos com o verdadeiro Evangelho."
     ]
   },
   testimonials: {
-    title: "O Que Dizem os Leitores",
     items: [
-      { name: "Ana Paula S.", text: "Estava passando por um momento muito difícil. Este livro me alcançou no momento certo.", stars: 5 },
-      { name: "Pr. Marcos Leal", text: "Uma exegese fiel e uma aplicação pastoral sensível. Perfeito para grupos.", stars: 5 },
-      { name: "Roberta Fontes", text: "Nunca havia prestado atenção em 1 Crônicas 19. Terminei em uma tarde.", stars: 5 }
+      { text: "Esse livro foi o abraço de Deus que eu precisava durante meu luto.", stars: 5 },
+      { text: "Uma leitura de esperança pura. Chorei em vários capítulos.", stars: 5 }
     ]
+  },
+  offer: {
+    title: "Adquira agora",
+    oldPrice: "R$ 39,90",
+    price: "R$ 19,90",
+    inclusions: [
+      "Ebook completo",
+      "Download imediato",
+      "Leitura em qualquer dispositivo",
+      "Acesso vitalício",
+      "Atualizações futuras"
+    ],
+    buttonText: "QUERO RECEBER AGORA",
+    checkoutLink: "#",
+    guaranteeText: "Garantia incondicional de 7 dias"
   },
   faq: {
-    title: "Perguntas Frequentes",
     items: [
-      { question: "Em que formato é?", answer: "PDF em tamanho A5, otimizado para celulares, tablets ou impressão." },
-      { question: "É um livro físico?", answer: "Não, é digital, por isso o acesso é imediato e o preço é acessível." },
-      { question: "Posso ler em grupo?", answer: "Sim. O livro traz um guia pensado para células e estudos bíblicos." }
+      { question: "É um livro de autoajuda?", answer: "Não, é um material 100% embasado na Bíblia para trazer consolo." }
     ]
   },
-  seo: {
-    title: "Cercados, mas Não Sozinhos | O Chamado da Graça",
-    description: "Joabe e Abisai, e a coragem de enfrentar a batalha de duas frentes."
+  finalCta: {
+    title: "Comece hoje uma leitura que pode fortalecer sua fé e aprofundar sua comunhão com Deus.",
+    buttonText: "QUERO COMEÇAR AGORA"
   },
-  footer: {
-    copyright: "© 2026 Francisco Gomes. Todos os direitos reservados.",
-    disclaimer: "Este produto é comercializado com apoio das principais plataformas de pagamento."
+  seo: {
+    title: "Cercados, Mas Não Sozinhos | Consolo",
+    description: "A presença de Deus no meio da angústia."
   }
 };

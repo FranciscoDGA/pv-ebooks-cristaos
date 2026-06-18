@@ -1,89 +1,85 @@
 export interface EbookConfig {
   slug: string;
-  themeColor: string;
+  themeColor: string; // Used for minimal accents if needed
   hero: {
     category: string;
     title: string;
     subtitle: string;
-    description: string;
+    checklist: string[];
+    primaryButtonText: string;
+    secondaryButtonText: string;
     coverImage: string;
     mockupImage?: string;
-    guarantees: string[];
   };
-  problem: {
+  identification: {
     title: string;
-    description: string;
-    question: string;
+    paragraphs: string[];
   };
-  promise: {
-    title: string;
-    description: string;
-  };
-  discover: {
-    title: string;
-    items: {
-      icon?: string;
-      title: string;
-      description: string;
-    }[];
-  };
-  audience: {
+  imagine: {
     title: string;
     items: string[];
   };
+  discover: {
+    items: {
+      icon?: string;
+      description: string;
+    }[];
+  };
   insideBook: {
-    title: string;
     chapters: {
+      number: string;
       title: string;
       description: string;
     }[];
   };
-  preview: {
+  gallery: {
+    bookOpenImage?: string;
+    mobileImage?: string;
+    tabletImage?: string;
+    desktopImage?: string;
+  };
+  forWhom: {
+    items: string[];
+  };
+  benefits: {
     title: string;
-    images: string[];
+    items: {
+      icon: string;
+      title: string;
+    }[];
   };
   author: {
     photo: string;
     name: string;
-    bio: string;
+    bioParagraphs: string[];
+  };
+  testimonials: {
+    items: {
+      text: string;
+      stars: number;
+    }[];
   };
   offer: {
     title: string;
     oldPrice: string;
     price: string;
-    paymentMethods: string;
-    checkoutLink: string;
-    guaranteeDays: number;
     inclusions: string[];
-  };
-  benefits: {
-    title: string;
-    items: {
-      title: string;
-      description: string;
-    }[];
-  };
-  testimonials: {
-    title: string;
-    items: {
-      name: string;
-      text: string;
-      stars: number;
-    }[];
+    buttonText: string;
+    checkoutLink: string;
+    guaranteeText: string;
   };
   faq: {
-    title: string;
     items: {
       question: string;
       answer: string;
     }[];
   };
+  finalCta: {
+    title: string;
+    buttonText: string;
+  };
   seo: {
     title: string;
     description: string;
-  };
-  footer?: {
-    copyright: string;
-    disclaimer: string;
   };
 }

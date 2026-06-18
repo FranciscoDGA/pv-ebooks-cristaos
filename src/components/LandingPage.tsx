@@ -2,42 +2,40 @@ import '../sales.css';
 import { Helmet } from 'react-helmet-async';
 import type { EbookConfig } from '../config/types';
 import {
-  EbookHero,
-  ProblemSection,
-  PromiseSection,
+  HeroSection,
+  IdentificationSection,
+  ImagineSection,
   DiscoverSection,
-  ForWhomSection,
   InsideBookSection,
-  MockupPreviewSection,
+  GallerySection,
+  ForWhomSection,
+  BenefitsSection,
   AuthorSection,
-  OfferSection,
-  BonusBenefitsSection,
   TestimonialsSection,
+  OfferSection,
   FaqSection,
   FinalCTA
 } from './sales/SalesSections';
 
 export function LandingPage({ config }: { config: EbookConfig }) {
-  if (!config) return <div style={{textAlign:'center', padding: '100px'}}>Página não encontrada</div>;
-
   return (
-    <div className="font-sans sales-landing-wrapper">
+    <div className="sales-landing-wrapper" style={{ '--theme-color': config.themeColor } as React.CSSProperties}>
       <Helmet>
         <title>{config.seo.title}</title>
         <meta name="description" content={config.seo.description} />
       </Helmet>
-      
-      <EbookHero config={config} />
-      <ProblemSection config={config} />
-      <PromiseSection config={config} />
+
+      <HeroSection config={config} />
+      <IdentificationSection config={config} />
+      <ImagineSection config={config} />
       <DiscoverSection config={config} />
-      <ForWhomSection config={config} />
       <InsideBookSection config={config} />
-      <MockupPreviewSection config={config} />
+      <GallerySection config={config} />
+      <ForWhomSection config={config} />
+      <BenefitsSection config={config} />
       <AuthorSection config={config} />
-      <OfferSection config={config} />
-      <BonusBenefitsSection config={config} />
       <TestimonialsSection config={config} />
+      <OfferSection config={config} />
       <FaqSection config={config} />
       <FinalCTA config={config} />
     </div>

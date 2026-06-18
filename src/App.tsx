@@ -3,6 +3,7 @@ import './index.css';
 import './App.css';
 
 import { MainLayout } from './layouts/MainLayout';
+import { SalesLayout } from './layouts/SalesLayout';
 import { HomePage } from './pages/HomePage';
 import { BlogIndex } from './pages/BlogIndex';
 import { ArticlePage } from './pages/ArticlePage';
@@ -55,7 +56,10 @@ function App() {
 <h3>4. Política de Reembolso</h3>
 <p>Garantimos a devolução integral do valor pago dentro do prazo de 7 dias úteis após a compra, caso o cliente sinta-se insatisfeito com o conteúdo digital, conforme estabelecido pelo Código de Defesa do Consumidor.</p></LegalPage>} />
 
-          {/* Livros Landing Pages */}
+        </Route>
+        
+        {/* Livros Landing Pages (Sem Menu/Rodapé Global) */}
+        <Route path="/" element={<SalesLayout />}>
           <Route path="orando" element={<LandingPage config={configOrando} />} />
           <Route path="quando-nao-ha-rei" element={<LandingPage config={configRei} />} />
           <Route path="quem-ainda-chora" element={<LandingPage config={configChora} />} />
@@ -64,6 +68,7 @@ function App() {
           <Route path="historias-para-dormir" element={<LandingPage config={configDormir} />} />
           <Route path="cercados-mas-nao-sozinhos" element={<LandingPage config={configCercados} />} />
         </Route>
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

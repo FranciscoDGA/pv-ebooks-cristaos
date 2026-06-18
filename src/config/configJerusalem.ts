@@ -2,129 +2,118 @@ import type { EbookConfig } from './types';
 
 export const configJerusalem: EbookConfig = {
   slug: "somos-todos-jerusalem",
-  themeColor: "#8b0000",
+  themeColor: "#c5a880",
   hero: {
-    category: "TEOLOGIA • VIDA CRISTÃ",
+    category: "LIVRO DIGITAL",
     title: "Somos Todos Jerusalém",
-    subtitle: "O perdão que transforma quem um dia negou a Cristo",
-    description: "Uma jornada simples e profunda pela história da cruz: do nosso pecado ao perdão que recomeça tudo. Sem diferença de raça, língua ou tribo, e fundamentada inteiramente na Palavra de Deus.",
-    coverImage: "/somos_todos_jerusalem_1781101925943.png",
-    mockupImage: "/somos_todos_jerusalem_1781101925943.png", // Usando capa como placeholder de mockup
-    guarantees: [
-      "Download imediato",
-      "PDF em alta qualidade",
-      "Acesso vitalício",
-      "Leitura em qualquer dispositivo"
+    subtitle: "A tragédia do engano religioso e a urgência do arrependimento.",
+    checklist: [
+      "Leitura imediata",
+      "PDF completo",
+      "Compatível com celular, tablet e computador",
+      "Acesso vitalício"
     ],
+    primaryButtonText: "Quero começar minha leitura",
+    secondaryButtonText: "Ver prévia",
+    coverImage: "/somos_todos_jerusalem_1781101925943.png",
+    mockupImage: "/somos_todos_jerusalem_1781101925943.png"
   },
-  problem: {
-    title: "A Dor da Culpa e do Afastamento",
-    description: "Você já sentiu que seus erros foram grandes demais para serem perdoados? A sensação de falha constante pode afastar muitos cristãos da presença de Deus. Sentimos o peso de nossas más escolhas, assim como Jerusalém, assim como Pedro.",
-    question: "Como encontrar perdão quando o espelho só nos mostra nossas falhas?"
-  },
-  promise: {
-    title: "A Cruz é o Recomeço",
-    description: "Este é um livro que dói um pouco antes de curar. Ao ler estas páginas, você não apenas entenderá a grandeza da cruz, mas sentirá o abraço da graça que restaura."
-  },
-  discover: {
-    title: "O Que Você Vai Descobrir",
-    items: [
-      {
-        icon: "heart",
-        title: "O Amor Que Veio Chorando",
-        description: "Compreendendo por que somos todos Jerusalém e a profundidade desse amor."
-      },
-      {
-        icon: "cross",
-        title: "O Peso da Traição",
-        description: "Entenda o papel da multidão, de Judas e de Pedro na crucificação."
-      },
-      {
-        icon: "eye",
-        title: "O Olhar Que Perdoa",
-        description: "Aprenda sobre o olhar de Jesus que alcança e restaura o que falhou."
-      },
-      {
-        icon: "sun",
-        title: "A Vida Que Recomeça",
-        description: "A missão de levar a esperança ao mundo, livre da culpa."
-      }
+  identification: {
+    title: "Você tem se sentido religiosamente seguro, mas distante de Deus?",
+    paragraphs: [
+      "Uma análise do capítulo 7 de Jeremias e do sermão que chocou o povo de Deus.",
+      "Muitas vezes depositamos nossa confiança em símbolos religiosos em vez de num relacionamento verdadeiro."
     ]
   },
-  audience: {
-    title: "Para Quem é Este E-book",
+  imagine: {
+    title: "Imagine uma fé sem enganos.",
     items: [
-      "Cristãos que desejam crescer espiritualmente",
-      "Pessoas afastadas da fé que buscam recomeço",
-      "Pastores, professores e líderes",
-      "Estudantes da Bíblia",
-      "Qualquer pessoa buscando leitura profunda e acessível"
+      "Imagine conhecer o coração de Deus.",
+      "Imagine um arrependimento que traz vida e cura.",
+      "Imagine viver a verdadeira adoração.",
+      "Imagine estar alinhado com a vontade divina."
+    ]
+  },
+  discover: {
+    items: [
+      { icon: "fa-solid fa-church", description: "O perigo do Templo como talismã." },
+      { icon: "fa-solid fa-heart-crack", description: "As marcas de um coração enganado." },
+      { icon: "fa-solid fa-person-praying", description: "O caminho do verdadeiro arrependimento." }
     ]
   },
   insideBook: {
-    title: "O Que Tem Dentro",
     chapters: [
-      { title: "Parte 1: A Cidade Amada", description: "O cenário e a paixão por Jerusalém." },
-      { title: "Parte 2: A Multidão e a Cruz", description: "Como a humanidade toda estava representada no calvário." },
-      { title: "Parte 3: O Olhar que Perdoa", description: "O perdão que quebra cadeias e cura." },
-      { title: "Parte 4: A Vida que Recomeça", description: "A instrução para o futuro e a esperança renovada." }
+      { number: "01", title: "O Sermão do Templo", description: "Jeremias na porta da Casa do Senhor." },
+      { number: "02", title: "Falsa Segurança", description: "Confiando em palavras mentirosas." },
+      { number: "03", title: "A Religião Estéril", description: "Rituais sem obediência." },
+      { number: "04", title: "O Caminho de Volta", description: "Reforma de caminhos e obras." }
     ]
   },
-  preview: {
-    title: "Dê uma Olhada por Dentro",
-    images: ["/sample_page_1.png", "/sample_page_2.png", "/sample_page_3.png", "/sample_page_4.png"]
+  gallery: {
+    bookOpenImage: "/somos_todos_jerusalem_1781101925943.png",
+    mobileImage: "/somos_todos_jerusalem_1781101925943.png",
+    tabletImage: "/somos_todos_jerusalem_1781101925943.png",
+    desktopImage: "/somos_todos_jerusalem_1781101925943.png"
+  },
+  forWhom: {
+    items: [
+      "Cristãos buscando aprofundamento bíblico",
+      "Pessoas insatisfeitas com religiosidade vazia",
+      "Líderes e professores de EBD",
+      "Todos que desejam um relacionamento genuíno com Deus"
+    ]
+  },
+  benefits: {
+    title: "O que você receberá",
+    items: [
+      { icon: "fa-solid fa-book", title: "Ebook completo" },
+      { icon: "fa-solid fa-bolt", title: "Acesso imediato" },
+      { icon: "fa-solid fa-mobile-screen", title: "Leitura no celular" },
+      { icon: "fa-solid fa-laptop", title: "Compatível com computador" },
+      { icon: "fa-solid fa-infinity", title: "Acesso vitalício" },
+      { icon: "fa-solid fa-lock", title: "Pagamento seguro" }
+    ]
   },
   author: {
     photo: "/author_pastoral.png",
     name: "Pr. Francisco Gomes",
-    bio: "Pastor, conferencista e ensinador da Palavra. Atua como Vice-Presidente do MAJEV dedicando seu ministério a ensinar o povo de Deus a sair da teoria e entrar na prática da fé e da comunhão diária."
-  },
-  offer: {
-    title: "Comece Sua Leitura Agora",
-    oldPrice: "R$ 49,90",
-    price: "R$ 19,90",
-    paymentMethods: "PIX e Cartões de Crédito",
-    checkoutLink: "#",
-    guaranteeDays: 7,
-    inclusions: [
-      "E-book Completo em PDF",
-      "Acesso Imediato",
-      "Leitura em qualquer tela",
-      "Garantia Incondicional de 7 dias"
-    ]
-  },
-  benefits: {
-    title: "Benefícios Inclusos",
-    items: [
-      { title: "Plano de Leitura de 7 Dias", description: "Guia passo a passo da culpa à graça." },
-      { title: "Orações-Modelo", description: "Ajuda prática para se reconectar com Deus." },
-      { title: "Glossário Simplificado", description: "Entenda os termos teológicos facilmente." }
+    bioParagraphs: [
+      "Pastor evangélico, teólogo e apaixonado pelas Escrituras Sagradas.",
+      "Sua missão é ajudar cristãos a superarem a superficialidade espiritual e a desenvolverem raízes profundas na graça e no conhecimento de Cristo."
     ]
   },
   testimonials: {
-    title: "O Que os Leitores Dizem",
     items: [
-      { name: "Leitor Anônimo", text: "Este livro mudou minha visão sobre o amor de Deus. É profundo, mas fácil de entender. A leitura é fluida e o impacto é eterno.", stars: 5 },
-      { name: "Leitora Anônima", text: "Leitura obrigatória para todo novo convertido e líder de jovens. Encontrei respostas para dúvidas que carregava há anos.", stars: 5 },
-      { name: "Líder de Ministério", text: "Uma obra magistral. Recomendo a todos da minha congregação como material de estudo e devoção.", stars: 5 }
+      { text: "Uma leitura desafiadora que me fez rever toda a minha forma de congregar.", stars: 5 },
+      { text: "Profundo e necessário para a igreja de nossos dias.", stars: 5 }
     ]
+  },
+  offer: {
+    title: "Adquira agora",
+    oldPrice: "R$ 39,90",
+    price: "R$ 19,90",
+    inclusions: [
+      "Ebook completo",
+      "Download imediato",
+      "Leitura em qualquer dispositivo",
+      "Acesso vitalício",
+      "Atualizações futuras"
+    ],
+    buttonText: "QUERO RECEBER AGORA",
+    checkoutLink: "#",
+    guaranteeText: "Garantia incondicional de 7 dias"
   },
   faq: {
-    title: "Perguntas Frequentes",
     items: [
-      { question: "Como receberei o e-book?", answer: "Após a confirmação do pagamento, você receberá um e-mail com o link para baixar o livro em PDF imediatamente." },
-      { question: "Posso ler no celular?", answer: "Sim, o arquivo PDF é otimizado para leitura em qualquer dispositivo: celular, tablet, computador ou Kindle." },
-      { question: "O acesso é vitalício?", answer: "Sim, uma vez baixado, o arquivo é seu para sempre." },
-      { question: "Posso imprimir?", answer: "Sim, o arquivo não possui bloqueios de impressão para uso pessoal e de estudo." },
-      { question: "O pagamento é seguro?", answer: "Sim, processado pelas maiores plataformas do mercado." }
+      { question: "É um estudo de Jeremias 7?", answer: "Sim, focado na aplicação espiritual de Jeremias 7 para a Igreja atual." }
     ]
   },
-  seo: {
-    title: "Somos Todos Jerusalém | O Chamado da Graça",
-    description: "Uma jornada simples e profunda pela história da cruz: do nosso pecado ao perdão que recomeça tudo."
+  finalCta: {
+    title: "Comece hoje uma leitura que pode fortalecer sua fé e aprofundar sua comunhão com Deus.",
+    buttonText: "QUERO COMEÇAR AGORA"
   },
-  footer: {
-    copyright: "© 2026 Francisco Gomes. Todos os direitos reservados.",
-    disclaimer: "Este produto é comercializado com apoio das principais plataformas de pagamento. Os resultados podem variar conforme a aplicação individual."
+  seo: {
+    title: "Somos Todos Jerusalém | E-book",
+    description: "A tragédia do engano religioso e a urgência do arrependimento."
   }
 };

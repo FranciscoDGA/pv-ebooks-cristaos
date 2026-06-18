@@ -2,98 +2,118 @@ import type { EbookConfig } from './types';
 
 export const configColecao: EbookConfig = {
   slug: "colecao",
-  themeColor: "#b8860b",
+  themeColor: "#c5a880",
   hero: {
     category: "COLEÇÃO COMPLETA",
-    title: "Coleção A Cruz e o Coração Humano",
-    subtitle: "O acervo completo para transformar sua jornada espiritual",
-    description: "Tenha acesso a todos os títulos da série com um desconto especial. Mergulhe em temas de oração, arrependimento, liderança e muito mais.",
-    coverImage: "/christian_book_cover.png", // placeholder
-    mockupImage: "/christian_book_cover.png",
-    guarantees: [
-      "Download imediato",
-      "PDFs em alta qualidade",
-      "Acesso vitalício",
-      "Leitura em qualquer dispositivo"
+    title: "A Cruz e o Coração Humano",
+    subtitle: "O acervo completo para transformar sua jornada espiritual.",
+    checklist: [
+      "Leitura imediata",
+      "PDF completo de todos os livros",
+      "Compatível com celular, tablet e computador",
+      "Acesso vitalício"
     ],
+    primaryButtonText: "Quero acessar o acervo completo",
+    secondaryButtonText: "Ver prévia",
+    coverImage: "/christian_book_cover.png",
+    mockupImage: "/christian_book_cover.png"
   },
-  problem: {
-    title: "Buscando um crescimento constante?",
-    description: "Muitas vezes lemos um bom livro, mas a chama logo se apaga. Ter uma biblioteca sólida de crescimento espiritual é o primeiro passo para uma vida de constância.",
-    question: "Como manter sua mente e coração sempre alimentados pela Palavra?"
-  },
-  promise: {
-    title: "Uma Biblioteca de Edificação",
-    description: "Com a Coleção Completa, você terá acesso a todas as nossas principais obras, permitindo um estudo continuado e profundo."
-  },
-  discover: {
-    title: "Os Livros da Coleção",
-    items: [
-      { icon: "book", title: "Somos Todos Jerusalém", description: "O perdão que transforma." },
-      { icon: "book", title: "Orando com Corpo, Alma e Espírito", description: "Guia prático de oração." },
-      { icon: "book", title: "Quando Não Há Rei", description: "O governo do coração humano." },
-      { icon: "book", title: "Quem Ainda Chora?", description: "O clamor por arrependimento." }
+  identification: {
+    title: "Sua biblioteca de nutrição espiritual.",
+    paragraphs: [
+      "Tenha acesso a todos os títulos da série com um desconto especial.",
+      "Mergulhe em temas de oração, arrependimento, liderança e muito mais."
     ]
   },
-  audience: {
-    title: "Para Quem é a Coleção",
+  imagine: {
+    title: "Imagine ter sempre à mão o alimento sólido da Palavra.",
     items: [
-      "Leitores que desejam desconto exclusivo",
-      "Pastores e líderes para montarem grupos de estudo",
-      "Estudantes dedicados da Bíblia"
+      "Imagine aprofundar sua teologia diariamente.",
+      "Imagine ter respostas bíblicas para os dilemas da alma.",
+      "Imagine montar uma base firme para sua fé.",
+      "Imagine economizar adquirindo tudo de uma vez."
+    ]
+  },
+  discover: {
+    items: [
+      { icon: "fa-solid fa-layer-group", description: "Todos os livros da série em um só pacote." },
+      { icon: "fa-solid fa-coins", description: "O maior custo-benefício da nossa editora." },
+      { icon: "fa-solid fa-graduation-cap", description: "Conteúdo denso e teologicamente seguro." }
     ]
   },
   insideBook: {
-    title: "O Que Tem Dentro",
     chapters: [
-      { title: "Livro 1", description: "Somos Todos Jerusalém" },
-      { title: "Livro 2", description: "Orando com Corpo, Alma e Espírito" },
-      { title: "Livro 3", description: "Quando Não Há Rei" },
-      { title: "Livro 4", description: "Quem Ainda Chora?" }
+      { number: "01", title: "Orando com o Corpo, Alma e Espírito", description: "Aprofunde sua intimidade com Deus." },
+      { number: "02", title: "Quando Não Há Rei", description: "Entenda a autoridade bíblica." },
+      { number: "03", title: "Quem Ainda Chora?", description: "O retorno ao altar do arrependimento." },
+      { number: "04", title: "Somos Todos Jerusalém", description: "A fuga do engano religioso." }
     ]
   },
-  preview: {
-    title: "Dê uma Olhada por Dentro",
-    images: ["/sample_page_1.png", "/sample_page_2.png"]
+  gallery: {
+    bookOpenImage: "/christian_book_cover.png",
+    mobileImage: "/christian_book_cover.png",
+    tabletImage: "/christian_book_cover.png",
+    desktopImage: "/christian_book_cover.png"
   },
-  author: {
-    photo: "/author_pastoral.png",
-    name: "Pr. Francisco Gomes",
-    bio: "Pastor e escritor, focando sempre em trazer a palavra viva para o coração da igreja moderna."
-  },
-  offer: {
-    title: "Leve Todos os 4 Livros",
-    oldPrice: "R$ 159,60",
-    price: "R$ 49,90",
-    paymentMethods: "PIX e Cartões de Crédito",
-    checkoutLink: "#",
-    guaranteeDays: 7,
-    inclusions: [
-      "4 E-books Completos em PDF",
-      "Acesso Imediato",
-      "Garantia Incondicional de 7 dias"
+  forWhom: {
+    items: [
+      "Seminarias e estudantes de teologia",
+      "Pastores que precisam de material para sermões",
+      "Cristãos famintos por conhecimento",
+      "Quem deseja adquirir toda a biblioteca"
     ]
   },
   benefits: {
-    title: "Bônus Exclusivos da Coleção",
+    title: "O que você receberá",
     items: [
-      { title: "Mentoria Gravada", description: "Acesso a um estudo em vídeo com o autor." }
+      { icon: "fa-solid fa-book", title: "Todos os Ebooks" },
+      { icon: "fa-solid fa-bolt", title: "Acesso imediato" },
+      { icon: "fa-solid fa-mobile-screen", title: "Leitura no celular" },
+      { icon: "fa-solid fa-laptop", title: "Compatível com computador" },
+      { icon: "fa-solid fa-infinity", title: "Acesso vitalício" },
+      { icon: "fa-solid fa-lock", title: "Pagamento seguro" }
+    ]
+  },
+  author: {
+    photo: "/author_pastoral.png",
+    name: "Editora O Chamado da Graça",
+    bioParagraphs: [
+      "Produzindo materiais de excelência para abençoar a Igreja Brasileira.",
+      "Comprometidos com o verdadeiro Evangelho."
     ]
   },
   testimonials: {
-    title: "Relatos",
     items: [
-      { name: "Leitor Assíduo", text: "A melhor decisão foi comprar o combo. Material riquíssimo!", stars: 5 }
+      { text: "Adquiri a coleção e não me arrependo. Material riquíssimo!", stars: 5 },
+      { text: "O melhor investimento que fiz na minha vida espiritual este ano.", stars: 5 }
     ]
+  },
+  offer: {
+    title: "Adquira a Coleção Agora",
+    oldPrice: "R$ 159,90",
+    price: "R$ 67,90",
+    inclusions: [
+      "4 Ebooks Completos",
+      "Download imediato de tudo",
+      "Leitura em qualquer dispositivo",
+      "Acesso vitalício",
+      "Atualizações futuras"
+    ],
+    buttonText: "QUERO A COLEÇÃO COMPLETA",
+    checkoutLink: "#",
+    guaranteeText: "Garantia incondicional de 7 dias"
   },
   faq: {
-    title: "FAQ",
     items: [
-      { question: "Como recebo os livros?", answer: "Eles serão enviados juntos em um único e-mail para download." }
+      { question: "Vem todos os livros juntos?", answer: "Sim, você receberá o link para baixar todos os PDFs de uma vez." }
     ]
   },
+  finalCta: {
+    title: "Garanta a coleção completa hoje pelo melhor valor.",
+    buttonText: "QUERO GARANTIR AGORA"
+  },
   seo: {
-    title: "Coleção Completa | O Chamado da Graça",
-    description: "Adquira todos os e-books da série com um super desconto."
+    title: "Coleção A Cruz e o Coração Humano | E-books",
+    description: "O acervo completo para transformar sua jornada espiritual."
   }
 };

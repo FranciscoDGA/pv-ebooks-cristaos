@@ -1,251 +1,262 @@
 import { useState } from 'react';
 import type { EbookConfig } from '../../config/types';
 
-export const EbookHero = ({ config }: { config: EbookConfig }) => (
-  <section className="sales-hero" style={{ '--theme-color': config.themeColor } as any}>
-    <div className="container hero-grid">
-      <div className="hero-content">
-        <span className="category-badge">{config.hero.category}</span>
-        <h1 className="main-title">{config.hero.title}</h1>
-        <p className="subtitle">{config.hero.subtitle}</p>
-        <p className="description">{config.hero.description}</p>
-        
-        <div className="cta-wrapper">
-          <a href={config.offer.checkoutLink} className="btn-primary" style={{ backgroundColor: config.themeColor }}>
-            QUERO LER ESTE E-BOOK AGORA
-          </a>
-          <ul className="guarantees-list">
-            {config.hero.guarantees.map((g, i) => (
-              <li key={i}>✓ {g}</li>
+interface SectionProps {
+  config: EbookConfig;
+}
+
+export function HeroSection({ config }: SectionProps) {
+  return (
+    <section className="sales-hero">
+      <div className="hero-grid">
+        <div className="hero-content">
+          <span className="category-badge">{config.hero.category}</span>
+          <h1 className="main-title">{config.hero.title}</h1>
+          <p className="subtitle">{config.hero.subtitle}</p>
+          
+          <ul className="hero-checklist">
+            {config.hero.checklist.map((item, i) => (
+              <li key={i}><i className="fa-solid fa-check"></i> {item}</li>
             ))}
           </ul>
+          
+          <div className="hero-cta-group">
+            <a href="#oferta" className="btn-primary">{config.hero.primaryButtonText}</a>
+            <a href="#preview" className="btn-secondary">{config.hero.secondaryButtonText}</a>
+          </div>
+        </div>
+        <div className="hero-image-wrapper">
+          <img src={config.hero.mockupImage || config.hero.coverImage} alt={config.hero.title} className="mockup-img float-animation" />
         </div>
       </div>
-      <div className="hero-mockup">
-        <img src={config.hero.mockupImage || config.hero.coverImage} alt={config.hero.title} className="mockup-img float-animation" />
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+}
 
-export const ProblemSection = ({ config }: { config: EbookConfig }) => (
-  <section className="problem-section">
-    <div className="container text-center">
-      <h2 className="section-title dark">{config.problem.title}</h2>
-      <p className="problem-desc">{config.problem.description}</p>
-      <h3 className="problem-question" style={{ color: config.themeColor }}>{config.problem.question}</h3>
-    </div>
-  </section>
-);
-
-export const PromiseSection = ({ config }: { config: EbookConfig }) => (
-  <section className="promise-section" style={{ backgroundColor: config.themeColor }}>
-    <div className="container text-center">
-      <h2 className="section-title light">{config.promise.title}</h2>
-      <p className="promise-desc">{config.promise.description}</p>
-    </div>
-  </section>
-);
-
-export const DiscoverSection = ({ config }: { config: EbookConfig }) => (
-  <section className="discover-section bg-light">
-    <div className="container">
-      <h2 className="section-title text-center dark">{config.discover.title}</h2>
-      <div className="cards-grid">
-        {config.discover.items.map((item, i) => (
-          <div className="premium-card" key={i}>
-            <div className="icon-wrapper" style={{ color: config.themeColor }}>★</div>
-            <h3 className="card-title">{item.title}</h3>
-            <p className="card-desc">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-export const ForWhomSection = ({ config }: { config: EbookConfig }) => (
-  <section className="for-whom-section">
-    <div className="container">
-      <h2 className="section-title text-center dark">{config.audience.title}</h2>
-      <ul className="check-list">
-        {config.audience.items.map((item, i) => (
-          <li key={i}>
-            <span className="check-icon" style={{ color: config.themeColor }}>✓</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-);
-
-export const InsideBookSection = ({ config }: { config: EbookConfig }) => (
-  <section className="inside-book-section bg-light">
-    <div className="container">
-      <h2 className="section-title text-center dark">{config.insideBook.title}</h2>
-      <div className="timeline">
-        {config.insideBook.chapters.map((chapter, i) => (
-          <div className="timeline-item" key={i}>
-            <div className="timeline-marker" style={{ backgroundColor: config.themeColor }}>{i + 1}</div>
-            <div className="timeline-content">
-              <h3>{chapter.title}</h3>
-              <p>{chapter.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-export const MockupPreviewSection = ({ config }: { config: EbookConfig }) => (
-  <section className="preview-section">
-    <div className="container text-center">
-      <h2 className="section-title dark">{config.preview.title}</h2>
-      <div className="preview-grid">
-        {config.preview.images.map((img, i) => (
-          <img src={img} alt={`Preview ${i+1}`} className="preview-img" key={i} />
-        ))}
-      </div>
-      <div className="mt-8">
-        <a href={config.offer.checkoutLink} className="btn-primary" style={{ backgroundColor: config.themeColor }}>
-          GARANTIR MEU ACESSO
-        </a>
-      </div>
-    </div>
-  </section>
-);
-
-export const AuthorSection = ({ config }: { config: EbookConfig }) => (
-  <section className="author-section-premium">
-    <div className="container author-grid-premium">
-      <div className="author-photo-wrapper">
-        <img src={config.author.photo} alt={config.author.name} className="author-photo-premium" />
-      </div>
-      <div className="author-info">
-        <span className="author-label" style={{ color: config.themeColor }}>SOBRE O AUTOR</span>
-        <h2 className="author-name-premium">{config.author.name}</h2>
-        <p className="author-bio-premium">{config.author.bio}</p>
-      </div>
-    </div>
-  </section>
-);
-
-export const OfferSection = ({ config }: { config: EbookConfig }) => (
-  <section className="offer-section-premium bg-light">
-    <div className="container">
-      <div className="offer-box-premium" style={{ borderColor: config.themeColor }}>
-        <h2 className="offer-title">{config.offer.title}</h2>
-        <div className="offer-pricing">
-          <span className="old-price">{config.offer.oldPrice}</span>
-          <span className="new-price">{config.offer.price}</span>
-        </div>
-        <p className="payment-methods">{config.offer.paymentMethods}</p>
-        
-        <ul className="inclusions-list">
-          {config.offer.inclusions.map((inc, i) => (
-            <li key={i}>
-              <span className="check-icon" style={{ color: config.themeColor }}>✓</span> {inc}
-            </li>
-          ))}
-        </ul>
-        
-        <a href={config.offer.checkoutLink} className="btn-buy-large pulse-animation" style={{ backgroundColor: config.themeColor }}>
-          COMPRAR AGORA
-        </a>
-        <p className="guarantee-text">🔒 {config.offer.guaranteeDays} dias de garantia incondicional</p>
-      </div>
-    </div>
-  </section>
-);
-
-export const BonusBenefitsSection = ({ config }: { config: EbookConfig }) => (
-  <section className="benefits-section">
-    <div className="container">
-      <h2 className="section-title text-center dark">{config.benefits.title}</h2>
-      <div className="cards-grid">
-        {config.benefits.items.map((item, i) => (
-          <div className="benefit-card" key={i}>
-            <div className="icon-wrapper" style={{ color: config.themeColor }}>🎁</div>
-            <h3 className="card-title">{item.title}</h3>
-            <p className="card-desc">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-export const TestimonialsSection = ({ config }: { config: EbookConfig }) => (
-  <section className="testimonials-section bg-light">
-    <div className="container">
-      <h2 className="section-title text-center dark">{config.testimonials.title}</h2>
-      <div className="cards-grid">
-        {config.testimonials.items.map((item, i) => (
-          <div className="testimonial-card-premium" key={i}>
-            <div className="stars" style={{ color: config.themeColor }}>
-              {Array(item.stars).fill('★').join('')}
-            </div>
-            <p className="testimonial-text">"{item.text}"</p>
-            <p className="testimonial-author">- {item.name}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-export const FaqSection = ({ config }: { config: EbookConfig }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
+export function IdentificationSection({ config }: SectionProps) {
   return (
-    <section className="faq-section-premium">
-      <div className="container">
-        <h2 className="section-title text-center dark">{config.faq.title}</h2>
-        <div className="faq-list">
-          {config.faq.items.map((item, i) => (
-            <div className={`faq-item-premium ${openIndex === i ? 'active' : ''}`} key={i} onClick={() => setOpenIndex(openIndex === i ? null : i)}>
-              <div className="faq-question-premium">
-                <span>{item.question}</span>
-                <span className="toggle-icon" style={{ color: config.themeColor }}>{openIndex === i ? '-' : '+'}</span>
-              </div>
-              {openIndex === i && <div className="faq-answer-premium">{item.answer}</div>}
+    <section className="identification-section">
+      <div className="identification-content">
+        <h2 className="identification-title">{config.identification.title}</h2>
+        <div className="identification-text">
+          {config.identification.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ImagineSection({ config }: SectionProps) {
+  return (
+    <section className="imagine-section">
+      <div className="imagine-container">
+        <h2 className="imagine-title">{config.imagine.title}</h2>
+        <div className="imagine-blocks">
+          {config.imagine.items.map((item, i) => (
+            <div className="imagine-block" key={i}>
+              <i className="fa-solid fa-sparkles imagine-icon"></i>
+              <p>{item}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
   );
-};
+}
 
-export const FinalCTA = ({ config }: { config: EbookConfig }) => (
-  <section className="final-cta-section text-center" style={{ backgroundColor: config.themeColor }}>
-    <div className="container">
-      <h2 className="section-title light">Comece hoje uma leitura que pode fortalecer sua fé.</h2>
-      <div className="mt-8">
-        <a href={config.offer.checkoutLink} className="btn-buy-large pulse-animation" style={{ backgroundColor: '#fff', color: config.themeColor }}>
-          QUERO COMEÇAR A LER AGORA
-        </a>
+export function DiscoverSection({ config }: SectionProps) {
+  return (
+    <section className="discover-section">
+      <h2>O que você vai descobrir</h2>
+      <div className="cards-grid">
+        {config.discover.items.map((item, index) => (
+          <div key={index} className="premium-card">
+            {item.icon && (
+              <div className="icon-wrapper">
+                <i className={item.icon}></i>
+              </div>
+            )}
+            <p className="card-desc">{item.description}</p>
+          </div>
+        ))}
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+}
 
-export const FooterSection = ({ config }: { config: EbookConfig }) => (
-  <footer className="sales-footer">
-    <div className="container text-center">
-      <div className="footer-links">
-        <a href="/termos">Termos de Uso</a>
-        <a href="/privacidade">Privacidade</a>
-        <a href="/contato">Contato</a>
+export function InsideBookSection({ config }: SectionProps) {
+  return (
+    <section className="inside-book-section">
+      <h2>O que tem dentro do e-book</h2>
+      <div className="timeline">
+        {config.insideBook.chapters.map((ch, index) => (
+          <div key={index} className="timeline-item">
+            <div className="timeline-marker">{ch.number}</div>
+            <div className="timeline-content">
+              <h3>{ch.title}</h3>
+              <p>{ch.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      {config.footer && (
-        <>
-          <p className="disclaimer">{config.footer.disclaimer}</p>
-          <p className="copyright">{config.footer.copyright}</p>
-        </>
-      )}
-    </div>
-  </footer>
-);
+    </section>
+  );
+}
+
+export function GallerySection({ config }: SectionProps) {
+  return (
+    <section id="preview" className="gallery-section">
+      <h2>Leia em qualquer lugar</h2>
+      <div className="gallery-grid">
+        {config.gallery.mobileImage && <img src={config.gallery.mobileImage} alt="Mobile" className="gallery-img" />}
+        {config.gallery.tabletImage && <img src={config.gallery.tabletImage} alt="Tablet" className="gallery-img" />}
+        {config.gallery.desktopImage && <img src={config.gallery.desktopImage} alt="Desktop" className="gallery-img" />}
+      </div>
+    </section>
+  );
+}
+
+export function ForWhomSection({ config }: SectionProps) {
+  return (
+    <section className="for-whom-section">
+      <h2>Para quem é este e-book?</h2>
+      <ul className="for-whom-grid">
+        {config.forWhom.items.map((item, index) => (
+          <li key={index} className="for-whom-card">
+            <i className="fa-solid fa-circle-check check-icon"></i>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export function BenefitsSection({ config }: SectionProps) {
+  return (
+    <section className="benefits-section">
+      <h2 className="benefits-title">{config.benefits.title}</h2>
+      <div className="benefits-grid">
+        {config.benefits.items.map((b, i) => (
+          <div className="benefit-item" key={i}>
+            <i className={b.icon}></i>
+            <span>{b.title}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function AuthorSection({ config }: SectionProps) {
+  return (
+    <section className="author-section-premium">
+      <div className="author-grid-premium">
+        <div className="author-photo-wrapper">
+          <img src={config.author.photo} alt={config.author.name} className="author-photo-premium" />
+        </div>
+        <div className="author-content">
+          <span className="author-label">Sobre o Autor</span>
+          <h2 className="author-name-premium">{config.author.name}</h2>
+          <div className="author-bio-premium">
+            {config.author.bioParagraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TestimonialsSection({ config }: SectionProps) {
+  if (!config.testimonials.items.length) return null;
+  return (
+    <section className="testimonials-section">
+      <h2>O que dizem os leitores</h2>
+      <div className="testimonials-grid">
+        {config.testimonials.items.map((item, index) => (
+          <div key={index} className="testimonial-card-premium">
+            <div className="stars">
+              {"★".repeat(item.stars)}
+            </div>
+            <p className="testimonial-text">"{item.text}"</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function OfferSection({ config }: SectionProps) {
+  return (
+    <section id="oferta" className="offer-section-premium">
+      <div className="offer-grid">
+        <div className="offer-image-col">
+           <img src={config.hero.mockupImage || config.hero.coverImage} alt="Ebook mockup" className="offer-mockup" />
+        </div>
+        <div className="offer-box-premium">
+          <h2 className="offer-title">{config.offer.title}</h2>
+          <div className="offer-pricing">
+            <span className="old-price">{config.offer.oldPrice}</span>
+            <span className="new-price">{config.offer.price}</span>
+            <span className="payment-methods">Pagamento único via PIX ou Cartão</span>
+          </div>
+          <ul className="inclusions-list">
+            {config.offer.inclusions.map((inc, i) => (
+              <li key={i}><i className="fa-solid fa-check"></i> {inc}</li>
+            ))}
+          </ul>
+          <a href={config.offer.checkoutLink} className="btn-buy-large pulse-animation">
+            {config.offer.buttonText}
+          </a>
+          <div className="guarantee-badge">
+            <i className="fa-solid fa-shield-check"></i> {config.offer.guaranteeText}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function FaqSection({ config }: SectionProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <section className="faq-section-premium">
+      <h2>Perguntas Frequentes</h2>
+      <div className="faq-list">
+        {config.faq.items.map((item, index) => (
+          <div key={index} className={`faq-item-premium ${openIndex === index ? 'active' : ''}`}>
+            <button 
+              className="faq-question-premium"
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            >
+              {item.question}
+              <span className="toggle-icon">{openIndex === index ? '−' : '+'}</span>
+            </button>
+            {openIndex === index && (
+              <div className="faq-answer-premium">
+                {item.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function FinalCTA({ config }: SectionProps) {
+  return (
+    <section className="final-cta-section">
+      <div className="final-cta-content">
+        <img src={config.hero.mockupImage || config.hero.coverImage} alt="Ebook" className="cta-mockup" />
+        <h2 className="cta-title">{config.finalCta.title}</h2>
+        <a href="#oferta" className="btn-primary cta-button">{config.finalCta.buttonText}</a>
+      </div>
+    </section>
+  );
+}
