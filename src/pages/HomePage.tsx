@@ -1,256 +1,201 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import '../home.css';
 import { blogArticles } from '../config/blogConfig';
 
 export function HomePage() {
-  const [activeTab, setActiveTab] = useState('lancamento');
-
   const books = [
-    { title: "Orando com o Corpo...", img: "/orando_com_corpo_alma_espirito_1781101893485.png", link: "/orando", price: "R$29,90", oldPrice: "R$49,90" },
-    { title: "Histórias da Bíblia Para Dormir", img: "/historia_biblia_dormir.png", link: "/historias-para-dormir", price: "R$24,90", oldPrice: "R$39,90" },
-    { title: "Quando Não Há Rei", img: "/quando_nao_ha_rei_1781101904540.png", link: "/quando-nao-ha-rei", price: "R$34,90", oldPrice: "R$55,00" },
-    { title: "Quem Ainda Chora?", img: "/quem_ainda_chora_1781101915571.png", link: "/quem-ainda-chora", price: "R$24,90", oldPrice: "R$39,90" },
-    { title: "Somos Todos Jerusalém", img: "/somos_todos_jerusalem_1781101925943.png", link: "/somos-todos-jerusalem", price: "R$39,90", oldPrice: "R$60,00" },
+    { title: "Orando com o Corpo...", img: "/orando_com_corpo_alma_espirito_1781101893485.png", link: "/orando", price: "R$ 19,90" },
+    { title: "Histórias Para Dormir", img: "/historia_biblia_dormir.png", link: "/historias-para-dormir", price: "R$ 19,90" },
+    { title: "Quando Não Há Rei", img: "/quando_nao_ha_rei_1781101904540.png", link: "/quando-nao-ha-rei", price: "R$ 19,90" },
+    { title: "Quem Ainda Chora?", img: "/quem_ainda_chora_1781101915571.png", link: "/quem-ainda-chora", price: "R$ 19,90" },
   ];
 
-  const colecaoBook = {
-    title: "Box: Coleção Completa",
-    img: "/home_hero_bg.png",
-    link: "/colecao",
-    price: "R$120,00",
-    oldPrice: "R$150,00"
-  };
-
   return (
-    <div>
+    <div className="home-wrapper">
       <Helmet>
         <title>O Chamado da Graça | Editora Cristã Digital</title>
         <meta name="description" content="Uma biblioteca digital cristã para quem deseja ler devagar, pensar profundamente e caminhar mais perto de Deus." />
       </Helmet>
 
-      {/* Hero Section E-commerce Style */}
-      <section style={{ display: 'flex', minHeight: '600px', backgroundColor: '#FAFAF8' }}>
-        {/* Sidebar Categories (Hide on small screens) */}
-        <aside style={{ width: '280px', backgroundColor: '#333', color: '#fff', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-          <h3 style={{ textTransform: 'uppercase', marginBottom: '1.5rem', fontSize: '1.2rem', letterSpacing: '1px', borderBottom: '1px solid #444', paddingBottom: '1rem' }}>CATEGORIAS</h3>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <li><Link to="/#livros" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Lançamentos</Link></li>
-            <li><Link to="/orando" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Vida de Oração</Link></li>
-            <li><Link to="/blog" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Profetas</Link></li>
-            <li><Link to="/blog" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Igreja & Sociedade</Link></li>
-            <li><Link to="/blog" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Arrependimento</Link></li>
-            <li><Link to="/blog" style={{ color: '#ccc', textDecoration: 'none', transition: 'color 0.2s' }}>▶ Santidade</Link></li>
-          </ul>
-        </aside>
-
-        {/* Hero Image & Content */}
-        <div style={{ 
-          flex: 1,
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("/hero_person.png")', 
-          backgroundSize: 'cover', backgroundPosition: 'center', color: '#fff', 
-          display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '4rem'
-        }}>
-          <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '5rem', marginBottom: '1rem', lineHeight: '1.1' }}>
-            O Chamado <br/>da Graça
-          </h1>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-            <span style={{ backgroundColor: 'var(--theme-yellow)', color: '#111', padding: '0.5rem 1rem', fontWeight: 'bold', fontSize: '1.5rem' }}>-20%</span>
-            <span style={{ fontSize: '1.5rem', color: '#ccc', textDecoration: 'line-through' }}>R$150,00</span>
-            <span style={{ fontSize: '2rem', fontWeight: 'bold' }}>R$120,00</span>
+      {/* SECTION 1: HERO */}
+      <section className="home-hero">
+        <div className="home-hero-content">
+          <h1 className="home-hero-title">Livros que fortalecem a fé e transformam vidas</h1>
+          <p className="home-hero-subtitle">
+            Uma biblioteca digital cristã criada para levar você além da teoria e conduzi-lo a uma comunhão real com Deus.
+          </p>
+          <div className="home-hero-buttons">
+            <Link to="/#colecoes" className="home-btn-primary">Explorar a Coleção</Link>
+            <Link to="/autor" className="home-btn-secondary">Conheça o Autor</Link>
           </div>
-          <p style={{ fontSize: '1.2rem', color: '#E5E7EB', maxWidth: '500px', marginBottom: '2rem' }}>A coleção completa para transformar sua caminhada cristã. Livros que confrontam, edificam e conduzem o coração à cruz.</p>
-          <div>
-            <a href="#livros" className="btn btn-primary" style={{ padding: '1rem 3rem', fontSize: '1.1rem', backgroundColor: 'var(--theme-yellow)', color: '#111' }}>Compre Agora</a>
+          <div className="home-hero-social-proof">
+            <span><i className="fa-solid fa-star"></i>★★★★★</span>
+            <span><i className="fa-solid fa-users"></i>+500 Leitores Impactados</span>
+            <span><i className="fa-solid fa-book"></i>12 Livros Publicados</span>
+            <span><i className="fa-solid fa-bolt"></i>Acesso Imediato</span>
           </div>
         </div>
       </section>
 
-      {/* Colorful Banners Section */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#FAFAF8' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            
-            <div style={{ backgroundColor: '#0EA5E9', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Estudos da Graça</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ver Coleção &gt;</Link>
-              </div>
-            </div>
+      {/* SECTION 2: MANIFESTO */}
+      <section className="home-manifesto">
+        <span className="manifesto-label">Nossa Missão</span>
+        <h2 className="manifesto-title">Mais do que vender livros.<br/>Queremos formar discípulos.</h2>
+        <p className="manifesto-text">
+          Cada livro é escrito para transformar conhecimento em prática, aproximar pessoas das Escrituras e fortalecer uma vida de comunhão com Deus.
+        </p>
+      </section>
 
-            <div style={{ backgroundColor: '#FACC15', padding: '2rem', color: '#111', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Vida de Oração</h3>
-                <Link to="/orando" style={{ color: '#111', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ler Livro &gt;</Link>
-              </div>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.8 }}>Orando Com o Corpo, a Alma e o Espírito</p>
+      {/* SECTION 3: COLLECTIONS */}
+      <section id="colecoes" className="home-collections">
+        <div className="collections-grid">
+          <Link to="/orando" className="collection-card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1445445290350-18a3b86e0b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')" }}>
+            <div className="collection-content">
+              <h3 className="collection-title">Vida de Oração</h3>
+              <p className="collection-desc">Desenvolva uma comunhão profunda e inabalável.</p>
+              <span className="collection-link">Explorar →</span>
             </div>
-
-            <div style={{ backgroundColor: '#14B8A6', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Consolo</h3>
-                <Link to="/quem-ainda-chora" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ler Livro &gt;</Link>
-              </div>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>Quem Ainda Chora?</p>
+          </Link>
+          <Link to="/cercados-mas-nao-sozinhos" className="collection-card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')" }}>
+            <div className="collection-content">
+              <h3 className="collection-title">Consolo</h3>
+              <p className="collection-desc">A presença de Deus nos momentos mais difíceis.</p>
+              <span className="collection-link">Explorar →</span>
             </div>
-
-            <div style={{ backgroundColor: '#F43F5E', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.3rem', margin: 0 }}>O Que a Bíblia Diz Sobre…</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
-              </div>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.85rem', opacity: 0.9 }}>Dinheiro, Casamento, Fim dos Tempos</p>
+          </Link>
+          <Link to="/quem-ainda-chora" className="collection-card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')" }}>
+            <div className="collection-content">
+              <h3 className="collection-title">Igreja & Sociedade</h3>
+              <p className="collection-desc">O retorno ao altar do verdadeiro arrependimento.</p>
+              <span className="collection-link">Explorar →</span>
             </div>
-
-            <div style={{ backgroundColor: '#8B5CF6', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Últimos Tempos</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
-              </div>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>Profecia, Apocalipse, Arrebatamento</p>
+          </Link>
+          <Link to="/colecao" className="collection-card" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')" }}>
+            <div className="collection-content">
+              <h3 className="collection-title">Coleção Completa</h3>
+              <p className="collection-desc">Adquira todo o acervo de uma só vez.</p>
+              <span className="collection-link">Explorar →</span>
             </div>
+          </Link>
+        </div>
+      </section>
 
-            <div style={{ backgroundColor: '#EC4899', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Mulher de Fé</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
-              </div>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>A Oração da Esposa, Provérbios 31</p>
-            </div>
+      {/* SECTION 4: FEATURED BOOK */}
+      <section className="home-featured">
+        <div className="featured-grid">
+          <div className="featured-image-wrapper">
+            <img src="/orando_com_corpo_alma_espirito_1781101893485.png" alt="Orando com o Corpo, a Alma e o Espírito" className="featured-mockup" />
+          </div>
+          <div className="featured-content">
+            <span className="manifesto-label" style={{ color: 'var(--color-gold)' }}>Livro em Destaque</span>
+            <h2>Orando com o Corpo, a Alma e o Espírito</h2>
+            <p>
+              Descubra como desenvolver uma vida de oração mais profunda e experimentar uma comunhão real com Deus através da integração entre corpo, alma e espírito.
+            </p>
+            <ul className="featured-checklist">
+              <li><i className="fa-solid fa-check"></i> PDF Completo</li>
+              <li><i className="fa-solid fa-check"></i> Leitura imediata</li>
+              <li><i className="fa-solid fa-check"></i> Acesso vitalício</li>
+              <li><i className="fa-solid fa-check"></i> Celular, tablet e computador</li>
+            </ul>
+            <Link to="/orando" className="home-btn-primary">Conhecer o Livro</Link>
+          </div>
+        </div>
+      </section>
 
-            <div style={{ backgroundColor: '#10B981', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Casamento Cristão</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
+      {/* SECTION 5: LATEST BOOKS */}
+      <section id="livros" className="home-latest">
+        <div className="home-latest-header">
+          <span className="manifesto-label">Acervo</span>
+          <h2 className="home-latest-title">Livros Mais Lidos</h2>
+        </div>
+        <div className="books-grid">
+          {books.map((b, i) => (
+            <Link to={b.link} key={i} className="book-card">
+              <div className="book-card-image">
+                <img src={b.img} alt={b.title} />
               </div>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>Casamento segundo a Bíblia</p>
-            </div>
-
-            <div style={{ backgroundColor: '#6366F1', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>Devocionais</h3>
-                <Link to="/#livros" style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Em Breve &gt;</Link>
-              </div>
-              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9 }}>365 Dias, 30 Dias com Deus</p>
-            </div>
-
-            <Link to="/historias-para-dormir" style={{ textDecoration: 'none' }}>
-              <div style={{ backgroundColor: '#F97316', padding: '2rem', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', borderRadius: '4px', cursor: 'pointer', height: '100%' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <h3 style={{ fontSize: '1.5rem', margin: 0, color: '#fff' }}>Livros Infantis</h3>
-                  <span style={{ color: '#fff', fontWeight: 'bold', textDecoration: 'underline', fontSize: '0.9rem' }}>Ver Livro &gt;</span>
-                </div>
-                <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem', opacity: 0.9, color: '#fff' }}>Histórias da Bíblia Para Dormir</p>
-              </div>
+              <div className="book-stars">★★★★★</div>
+              <h3 className="book-card-title">{b.title}</h3>
+              <p className="book-card-price">{b.price}</p>
+              <span className="book-card-link">Conhecer Livro</span>
             </Link>
+          ))}
+        </div>
+      </section>
 
+      {/* SECTION 6: QUOTE PARALLAX */}
+      <section className="home-quote">
+        <h2 className="quote-text">"Conhecimento bíblico sem transformação é apenas informação."</h2>
+        <span className="quote-author">Pr. Francisco Gomes Alves</span>
+      </section>
+
+      {/* SECTION 7: BLOG */}
+      <section className="home-blog">
+        <div className="home-latest-header">
+          <span className="manifesto-label">Editorial</span>
+          <h2 className="home-latest-title">Artigos Recentes</h2>
+        </div>
+        <div className="blog-grid">
+          {blogArticles.slice(0,3).map((article) => (
+            <Link to={`/blog/${article.id}`} key={article.id} className="blog-card">
+              <img src={article.thumbnail} alt={article.title} className="blog-image" />
+              <span className="blog-category">{article.category || 'Teologia'}</span>
+              <h3 className="blog-title">{article.title}</h3>
+              <p className="blog-excerpt">{article.excerpt}</p>
+              <span className="book-card-link">Ler Artigo →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 8: AUTHOR */}
+      <section className="home-author">
+        <div className="author-grid">
+          <div>
+            <img src="/author_pastoral.png" alt="Pr. Francisco Gomes" className="author-image" />
+          </div>
+          <div>
+            <span className="manifesto-label">Sobre o Autor</span>
+            <h2 className="author-title">Uma vida dedicada ao ensino das Escrituras</h2>
+            <p className="author-text">
+              Mais de duas décadas servindo a Cristo e ensinando as Escrituras com profundidade, clareza e fidelidade. 
+            </p>
+            <p className="author-text">
+              Transformando conhecimento bíblico em prática e ajudando pessoas a crescerem na comunhão com Deus, combatendo a superficialidade espiritual.
+            </p>
+            <Link to="/autor" className="home-btn-primary" style={{ marginTop: '1rem' }}>Conheça Minha História</Link>
           </div>
         </div>
       </section>
 
-      {/* TOP INTERESTING - Books Grid */}
-      <section id="livros" className="section-padding" style={{ backgroundColor: '#FAFAF8' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem' }}>MAIS VENDIDOS</h2>
-            <p style={{ color: '#777', maxWidth: '600px', margin: '0 auto' }}>Navegue pela coleção dos nossos livros mais vendidos. Você certamente encontrará o que busca.</p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '2rem', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
-              <span onClick={() => setActiveTab('lancamento')} style={{ borderBottom: activeTab === 'lancamento' ? '2px solid var(--theme-yellow)' : 'none', color: activeTab === 'lancamento' ? '#111' : '#777', paddingBottom: '0.5rem', cursor: 'pointer' }}>LANÇAMENTO</span>
-              <span onClick={() => setActiveTab('promocao')} style={{ borderBottom: activeTab === 'promocao' ? '2px solid var(--theme-yellow)' : 'none', color: activeTab === 'promocao' ? '#111' : '#777', paddingBottom: '0.5rem', cursor: 'pointer' }}>PROMOÇÃO</span>
-              <span onClick={() => setActiveTab('destaque')} style={{ borderBottom: activeTab === 'destaque' ? '2px solid var(--theme-yellow)' : 'none', color: activeTab === 'destaque' ? '#111' : '#777', paddingBottom: '0.5rem', cursor: 'pointer' }}>EM DESTAQUE</span>
-            </div>
+      {/* SECTION 9: TESTIMONIALS */}
+      <section className="home-testimonials">
+        <span className="manifesto-label">Impacto</span>
+        <h2 className="home-latest-title">O que dizem os leitores</h2>
+        
+        <div className="testimonials-grid">
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p>"Leitura profunda e transformadora. Uma quebra de paradigmas na minha caminhada com Deus."</p>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', justifyContent: 'center' }}>
-            {activeTab === 'promocao' ? (
-              <div className="product-card">
-                <div className="product-badge-new">NOVO</div>
-                <Link to={colecaoBook.link}>
-                  <div style={{ padding: '2rem 2rem 0 2rem', backgroundColor: '#f9f9f9', borderBottom: '1px solid #eee' }}>
-                    <img src={colecaoBook.img} alt={colecaoBook.title} style={{ width: '100%', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }} />
-                  </div>
-                </Link>
-                <div className="product-stars">★★★★★</div>
-                <h4 style={{ margin: '0.5rem 0', fontSize: '1rem', color: '#333' }}>{colecaoBook.title}</h4>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                  <span style={{ color: '#14B8A6', fontWeight: 'bold' }}>{colecaoBook.price}</span>
-                  <span style={{ color: '#ccc', textDecoration: 'line-through' }}>{colecaoBook.oldPrice}</span>
-                </div>
-                <Link to={colecaoBook.link} className="btn" style={{ backgroundColor: '#fff', color: '#111', border: '1px solid #ccc', padding: '0.4rem 1rem', fontSize: '0.8rem' }}>Ver Detalhes</Link>
-              </div>
-            ) : (
-              books.map((b, i) => (
-                <div key={i} className="product-card">
-                  <div className="product-badge-new">NOVO</div>
-                  <Link to={b.link}>
-                    <div style={{ padding: '2rem 2rem 0 2rem', backgroundColor: '#f9f9f9', borderBottom: '1px solid #eee' }}>
-                      <img src={b.img} alt={b.title} style={{ width: '100%', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }} />
-                    </div>
-                  </Link>
-                  <div className="product-stars">★★★★★</div>
-                  <h4 style={{ margin: '0.5rem 0', fontSize: '1rem', color: '#333' }}>{b.title}</h4>
-                  <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                    <span style={{ color: '#14B8A6', fontWeight: 'bold' }}>{b.price}</span>
-                    <span style={{ color: '#ccc', textDecoration: 'line-through' }}>{b.oldPrice}</span>
-                  </div>
-                  <Link to={b.link} className="btn" style={{ backgroundColor: '#fff', color: '#111', border: '1px solid #ccc', padding: '0.4rem 1rem', fontSize: '0.8rem' }}>Ver Detalhes</Link>
-                </div>
-              ))
-            )}
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p>"Uma experiência edificante. Recomendo para todos que desejam sair da superficialidade."</p>
+          </div>
+          <div className="testimonial-card">
+            <div className="stars">★★★★★</div>
+            <p>"Linguagem simples e cheia de sabedoria. Consegue tocar no coração de forma muito precisa."</p>
           </div>
         </div>
       </section>
 
-      {/* Latest Blog Posts */}
-      <section className="section-padding" style={{ backgroundColor: '#fff' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', textTransform: 'uppercase', letterSpacing: '2px' }}>ÚLTIMAS DO NOSSO BLOG</h2>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-            {blogArticles.slice(0,3).map((article) => {
-               // Extract from "10 Jun 2026"
-               const dateParts = article.date.split(" ");
-               const day = dateParts[0] || "01";
-               const month = dateParts[1] ? dateParts[1].toUpperCase() : "JAN";
-               
-               return (
-              <div key={article.id} className="blog-card" style={{ display: 'flex', flexDirection: 'column' }}>
-                <Link to={`/blog/${article.id}`}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={article.thumbnail} alt={article.title} style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
-                    <div className="blog-date-badge">
-                      <div className="blog-date-day">{day}</div>
-                      <div className="blog-date-month">{month}</div>
-                    </div>
-                  </div>
-                </Link>
-                <div style={{ padding: '1.5rem', textAlign: 'center' }}>
-                  <h3 style={{ fontSize: '1.3rem', color: '#222', marginBottom: '1rem' }}>{article.title}</h3>
-                  <p style={{ color: '#777', fontSize: '0.9rem', marginBottom: '1rem' }}>Artigo em Destaque</p>
-                  <p style={{ color: '#555', lineHeight: '1.6', fontSize: '0.95rem' }}>{article.excerpt}</p>
-                </div>
-              </div>
-            )})}
-          </div>
-        </div>
-      </section>
-
-      {/* Autor */}
-      <section id="author" className="section-padding" style={{ backgroundColor: '#FAFAF8', borderTop: '1px solid #eee' }}>
-        <div className="container">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
-            <div style={{ flex: '1 1 300px' }}>
-              <img src="/author_pastoral.png" alt="Pr. Francisco Gomes" style={{ width: '100%', borderRadius: '8px', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }} />
-            </div>
-            <div style={{ flex: '2 1 500px' }}>
-              <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '3rem', color: '#111827', marginBottom: '0.5rem' }}>Pr. Francisco Gomes</h2>
-              <p style={{ color: '#6B7280', textTransform: 'lowercase', letterSpacing: '1px', fontSize: '1rem', marginBottom: '2rem' }}>Pastor • conferencista • ensinador da Palavra</p>
-              <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#374151', marginBottom: '1rem' }}>Há mais de duas décadas servindo a Cristo e ensinando as Escrituras.</p>
-              <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#374151', marginBottom: '2rem' }}>Uma vida dedicada a transformar conhecimento bíblico em aplicação prática. Atua como Vice-Presidente do MAJEV, dedicando seu ministério a ensinar o povo de Deus a sair da teoria e entrar na comunhão diária.</p>
-            </div>
-          </div>
-        </div>
+      {/* SECTION 10: FINAL CTA */}
+      <section className="home-final">
+        <h2 className="final-title">Comece hoje uma jornada de crescimento espiritual</h2>
+        <p className="final-subtitle">Leituras simples, profundas e transformadoras.</p>
+        <Link to="/#livros" className="home-btn-primary">Explorar a Biblioteca</Link>
       </section>
 
     </div>
