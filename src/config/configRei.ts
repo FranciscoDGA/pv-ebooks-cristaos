@@ -4,50 +4,55 @@ export const configRei: EbookConfig = {
   slug: "quando-nao-ha-rei",
   themeColor: "#c5a880",
   hero: {
-    category: "LIDERANÇA E SUBMISSÃO",
-    title: "Quando Não Há Rei",
-    subtitle: "A crise de liderança e a anarquia no coração humano.",
+    category: "COLEÇÃO ESCATOLOGIA",
+    title: "QUANDO NÃO HÁ REI",
+    subtitle: "O perigo de uma geração sem direção espiritual.",
     checklist: [
-      "Leitura imediata",
       "PDF completo",
-      "Compatível com celular, tablet e computador",
-      "Acesso vitalício"
+      "Acesso vitalício",
+      "Compatível com celular",
+      "Download imediato"
     ],
-    primaryButtonText: "Quero começar minha leitura",
-    secondaryButtonText: "Ver prévia",
+    primaryButtonText: "COMEÇAR A LEITURA",
+    secondaryButtonText: "LER AMOSTRA",
     coverImage: "/quando_nao_ha_rei_1781101904540.png",
     mockupImage: "/quando_nao_ha_rei_1781101904540.png"
   },
   identification: {
-    title: "Você já sentiu que sua vida está fora de controle?",
+    title: "Quando não há rei, cada um faz o que parece certo aos seus próprios olhos.",
     paragraphs: [
-      "Um estudo profundo sobre o período dos Juízes e os perigos de uma vida governada pelas próprias regras.",
-      "Quando não há submissão ao verdadeiro Rei, a anarquia toma conta do coração humano e da sociedade."
+      "Vivemos em uma época onde a autoridade divina tem sido frequentemente substituída pela vontade humana. Quando o coração rejeita a soberania de Deus, a confusão e a anarquia espiritual tomam conta.",
+      "Este não é apenas um estudo histórico. É um alerta profundo sobre a necessidade de submetermos nossas vidas inteiramente ao verdadeiro Rei."
     ]
   },
-  imagine: {
-    title: "Imagine uma vida governada por Deus.",
+  experience: {
     items: [
-      "Imagine encontrar ordem no caos.",
-      "Imagine viver sob a verdadeira autoridade de Cristo.",
-      "Imagine experimentar paz e submissão diária.",
-      "Imagine compreender a essência da liderança bíblica."
+      "Leitura confortável.",
+      "Linguagem acessível.",
+      "Reflexões profundas.",
+      "Aplicação prática."
     ]
   },
   discover: {
     items: [
-      { icon: "fa-solid fa-crown", description: "O perigo de viver sem um rei." },
-      { icon: "fa-solid fa-scale-balanced", description: "As consequências da anarquia espiritual." },
-      { icon: "fa-solid fa-heart", description: "Como submeter seu coração à vontade de Deus." }
+      { description: "O impacto devastador de uma geração que abandonou os princípios eternos para viver sob suas próprias regras." },
+      { description: "Como a ausência de um rei verdadeiro em nossos corações nos leva inevitavelmente ao caos moral." },
+      { description: "A urgência de restaurar a autoridade de Cristo na vida pessoal, na família e na igreja." },
+      { description: "As lições atemporais do período dos Juízes para a igreja contemporânea." },
+      { description: "O contraste entre a liderança falha do homem e o governo perfeito de Deus." },
+      { description: "Passos práticos para render sua vontade e viver sob o domínio da graça." }
     ]
   },
   insideBook: {
     chapters: [
-      { number: "01", title: "O Período dos Juízes", description: "O caos quando cada um faz o que parece bem aos próprios olhos." },
-      { number: "02", title: "A Crise de Autoridade", description: "A rebelião do coração humano." },
-      { number: "03", title: "O Verdadeiro Rei", description: "Cristo como Senhor absoluto." },
-      { number: "04", title: "Submissão Prática", description: "Vivendo sob o reinado de Jesus hoje." }
+      { number: "PARTE I", title: "A ausência do rei.", description: "O que acontece quando a verdade absoluta é descartada." },
+      { number: "PARTE II", title: "O coração humano.", description: "A inclinação natural para o erro e a rebelião." },
+      { number: "PARTE III", title: "A crise espiritual.", description: "As consequências do afastamento da presença de Deus." },
+      { number: "PARTE IV", title: "A esperança.", description: "O retorno ao Senhor e a restauração sob o Seu governo." }
     ]
+  },
+  quote: {
+    text: "O caos exterior é apenas o reflexo de um trono interior vazio."
   },
   gallery: {
     bookOpenImage: "/quando_nao_ha_rei_1781101904540.png",
@@ -57,51 +62,46 @@ export const configRei: EbookConfig = {
   },
   forWhom: {
     items: [
-      "Líderes e pastores em formação",
-      "Cristãos buscando entender autoridade bíblica",
-      "Estudiosos do Antigo Testamento",
-      "Qualquer pessoa que deseja submeter sua vida a Deus"
+      "Cristãos.",
+      "Líderes.",
+      "Professores.",
+      "Novos convertidos.",
+      "Jovens.",
+      "Pais."
     ]
   },
   benefits: {
-    title: "O que você receberá",
-    items: [
-      { icon: "fa-solid fa-book", title: "Ebook completo" },
-      { icon: "fa-solid fa-bolt", title: "Acesso imediato" },
-      { icon: "fa-solid fa-mobile-screen", title: "Leitura no celular" },
-      { icon: "fa-solid fa-laptop", title: "Compatível com computador" },
-      { icon: "fa-solid fa-infinity", title: "Acesso vitalício" },
-      { icon: "fa-solid fa-lock", title: "Pagamento seguro" }
-    ]
+    title: "",
+    items: []
   },
   author: {
     photo: "/author_pastoral.png",
-    name: "Pr. Francisco Gomes",
+    name: "UMA VIDA DEDICADA AO ENSINO DAS ESCRITURAS",
     bioParagraphs: [
-      "Pastor evangélico, teólogo e apaixonado pelas Escrituras Sagradas.",
-      "Sua missão é ajudar cristãos a superarem a superficialidade espiritual e a desenvolverem raízes profundas na graça e no conhecimento de Cristo."
+      "Mais de duas décadas servindo a Cristo e ensinando as Escrituras com fidelidade, profundidade e amor pela Igreja.",
+      "Vice-presidente da MAJEV. Escritor e professor comprometido em transformar conhecimento bíblico em prática, ajudando pessoas a saírem da superficialidade religiosa para uma vida de intimidade com Deus."
     ]
   },
   testimonials: {
     items: [
-      { text: "Me ajudou a entender o que significa fazer Cristo o Rei da minha vida.", stars: 5 },
-      { text: "Um estudo fascinante sobre o livro de Juízes aplicado aos dias de hoje.", stars: 5 }
+      { text: "Leitura profunda e edificante. Uma obra que mudou minha forma de enxergar a comunhão com Deus.", stars: 5 },
+      { text: "Material simples e transformador. Consegue tocar no coração sem perder o peso teológico.", stars: 5 },
+      { text: "Uma experiência rica espiritualmente. Recomendo para todos que desejam sair da teoria.", stars: 5 }
     ]
   },
   offer: {
-    title: "Adquira agora",
+    title: "ADQUIRA AGORA",
     oldPrice: "R$ 39,90",
     price: "R$ 19,90",
     inclusions: [
-      "Ebook completo",
+      "PDF completo",
       "Download imediato",
-      "Leitura em qualquer dispositivo",
       "Acesso vitalício",
-      "Atualizações futuras"
+      "Celular e computador"
     ],
-    buttonText: "QUERO RECEBER AGORA",
+    buttonText: "QUERO COMEÇAR A LEITURA",
     checkoutLink: "#",
-    guaranteeText: "Garantia incondicional de 7 dias"
+    guaranteeText: "Compra segura."
   },
   faq: {
     items: [
@@ -109,11 +109,11 @@ export const configRei: EbookConfig = {
     ]
   },
   finalCta: {
-    title: "Comece hoje uma leitura que pode fortalecer sua fé e aprofundar sua comunhão com Deus.",
-    buttonText: "QUERO COMEÇAR AGORA"
+    title: "Comece hoje uma leitura que pode transformar sua maneira de enxergar o mundo.",
+    buttonText: "COMEÇAR AGORA"
   },
   seo: {
-    title: "Quando Não Há Rei | E-book",
-    description: "A crise de liderança e a anarquia no coração humano."
+    title: "Quando Não Há Rei | Coleção Escatologia",
+    description: "O perigo de uma geração sem direção espiritual."
   }
 };

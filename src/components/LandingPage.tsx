@@ -3,13 +3,13 @@ import { Helmet } from 'react-helmet-async';
 import type { EbookConfig } from '../config/types';
 import {
   HeroSection,
-  IdentificationSection,
-  ImagineSection,
+  ManifestoSection,
+  ExperienceSection,
   DiscoverSection,
   InsideBookSection,
+  QuoteSection,
   GallerySection,
   ForWhomSection,
-  BenefitsSection,
   AuthorSection,
   TestimonialsSection,
   OfferSection,
@@ -26,13 +26,13 @@ export function LandingPage({ config }: { config: EbookConfig }) {
       </Helmet>
 
       <HeroSection config={config} />
-      <IdentificationSection config={config} />
-      <ImagineSection config={config} />
+      <ManifestoSection config={config} />
+      <ExperienceSection config={config} />
       <DiscoverSection config={config} />
       <InsideBookSection config={config} />
+      <QuoteSection config={config} />
       <GallerySection config={config} />
       <ForWhomSection config={config} />
-      <BenefitsSection config={config} />
       <AuthorSection config={config} />
       <TestimonialsSection config={config} />
       <OfferSection config={config} />

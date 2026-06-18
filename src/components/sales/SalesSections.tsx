@@ -1,15 +1,27 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import type { EbookConfig } from '../../config/types';
 
 interface SectionProps {
   config: EbookConfig;
 }
 
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
+const blurReveal: Variants = {
+  hidden: { opacity: 0, filter: "blur(10px)" },
+  visible: { opacity: 1, filter: "blur(0px)", transition: { duration: 1, ease: "easeOut" } }
+};
+
 export function HeroSection({ config }: SectionProps) {
   return (
     <section className="sales-hero">
       <div className="hero-grid">
-        <div className="hero-content">
+        <motion.div className="hero-content" initial="hidden" animate="visible" variants={fadeUp}>
           <span className="category-badge">{config.hero.category}</span>
           <h1 className="main-title">{config.hero.title}</h1>
           <p className="subtitle">{config.hero.subtitle}</p>
@@ -24,43 +36,50 @@ export function HeroSection({ config }: SectionProps) {
             <a href="#oferta" className="btn-primary">{config.hero.primaryButtonText}</a>
             <a href="#preview" className="btn-secondary">{config.hero.secondaryButtonText}</a>
           </div>
-        </div>
-        <div className="hero-image-wrapper">
+        </motion.div>
+        <motion.div className="hero-image-wrapper" initial="hidden" animate="visible" variants={blurReveal}>
           <img src={config.hero.mockupImage || config.hero.coverImage} alt={config.hero.title} className="mockup-img float-animation" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
-export function IdentificationSection({ config }: SectionProps) {
+export function ManifestoSection({ config }: SectionProps) {
   return (
-    <section className="identification-section">
-      <div className="identification-content">
-        <h2 className="identification-title">{config.identification.title}</h2>
-        <div className="identification-text">
+    <section className="manifesto-section">
+      <motion.div className="manifesto-content" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp}>
+        <h2 className="manifesto-title">{config.identification.title}</h2>
+        <div className="manifesto-text">
           {config.identification.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
 
-export function ImagineSection({ config }: SectionProps) {
+export function ExperienceSection({ config }: SectionProps) {
+  if (!config.experience) return null;
   return (
-    <section className="imagine-section">
-      <div className="imagine-container">
-        <h2 className="imagine-title">{config.imagine.title}</h2>
-        <div className="imagine-blocks">
-          {config.imagine.items.map((item, i) => (
-            <div className="imagine-block" key={i}>
-              <i className="fa-solid fa-sparkles imagine-icon"></i>
-              <p>{item}</p>
-            </div>
-          ))}
-        </div>
+    <section className="experience-section">
+      <div className="experience-container">
+        <motion.div className="experience-images" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={blurReveal}>
+          {config.gallery.bookOpenImage && <img src={config.gallery.bookOpenImage} alt="Livro Aberto" className="exp-img-main" />}
+          <div className="exp-img-group">
+             {config.gallery.mobileImage && <img src={config.gallery.mobileImage} alt="Mobile" className="exp-img-sub" />}
+             {config.gallery.tabletImage && <img src={config.gallery.tabletImage} alt="Tablet" className="exp-img-sub" />}
+          </div>
+        </motion.div>
+        <motion.div className="experience-text" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <h2 className="experience-title">A EXPERIÊNCIA DA LEITURA</h2>
+          <ul className="experience-list">
+            {config.experience.items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
     </section>
   );
@@ -69,17 +88,12 @@ export function ImagineSection({ config }: SectionProps) {
 export function DiscoverSection({ config }: SectionProps) {
   return (
     <section className="discover-section">
-      <h2>O que você vai descobrir</h2>
+      <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>O QUE VOCÊ DESCOBRIRÁ</motion.h2>
       <div className="cards-grid">
         {config.discover.items.map((item, index) => (
-          <div key={index} className="premium-card">
-            {item.icon && (
-              <div className="icon-wrapper">
-                <i className={item.icon}></i>
-              </div>
-            )}
+          <motion.div key={index} className="premium-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ delay: index * 0.1 }}>
             <p className="card-desc">{item.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
@@ -89,18 +103,30 @@ export function DiscoverSection({ config }: SectionProps) {
 export function InsideBookSection({ config }: SectionProps) {
   return (
     <section className="inside-book-section">
-      <h2>O que tem dentro do e-book</h2>
+      <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>DENTRO DA OBRA</motion.h2>
       <div className="timeline">
         {config.insideBook.chapters.map((ch, index) => (
-          <div key={index} className="timeline-item">
+          <motion.div key={index} className="timeline-item" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ delay: index * 0.1 }}>
             <div className="timeline-marker">{ch.number}</div>
             <div className="timeline-content">
               <h3>{ch.title}</h3>
               <p>{ch.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
+    </section>
+  );
+}
+
+export function QuoteSection({ config }: SectionProps) {
+  if (!config.quote) return null;
+  return (
+    <section className="quote-section">
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+        <h2 className="quote-text">"{config.quote.text}"</h2>
+        {config.quote.author && <span className="quote-author">{config.quote.author}</span>}
+      </motion.div>
     </section>
   );
 }
@@ -108,12 +134,11 @@ export function InsideBookSection({ config }: SectionProps) {
 export function GallerySection({ config }: SectionProps) {
   return (
     <section id="preview" className="gallery-section">
-      <h2>Leia em qualquer lugar</h2>
-      <div className="gallery-grid">
+      <motion.div className="gallery-grid" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={blurReveal}>
         {config.gallery.mobileImage && <img src={config.gallery.mobileImage} alt="Mobile" className="gallery-img" />}
         {config.gallery.tabletImage && <img src={config.gallery.tabletImage} alt="Tablet" className="gallery-img" />}
         {config.gallery.desktopImage && <img src={config.gallery.desktopImage} alt="Desktop" className="gallery-img" />}
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -121,29 +146,12 @@ export function GallerySection({ config }: SectionProps) {
 export function ForWhomSection({ config }: SectionProps) {
   return (
     <section className="for-whom-section">
-      <h2>Para quem é este e-book?</h2>
-      <ul className="for-whom-grid">
+      <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>PARA QUEM É ESTE LIVRO</motion.h2>
+      <div className="for-whom-grid">
         {config.forWhom.items.map((item, index) => (
-          <li key={index} className="for-whom-card">
-            <i className="fa-solid fa-circle-check check-icon"></i>
+          <motion.div key={index} className="for-whom-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ delay: index * 0.1 }}>
             <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-export function BenefitsSection({ config }: SectionProps) {
-  return (
-    <section className="benefits-section">
-      <h2 className="benefits-title">{config.benefits.title}</h2>
-      <div className="benefits-grid">
-        {config.benefits.items.map((b, i) => (
-          <div className="benefit-item" key={i}>
-            <i className={b.icon}></i>
-            <span>{b.title}</span>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
@@ -154,18 +162,17 @@ export function AuthorSection({ config }: SectionProps) {
   return (
     <section className="author-section-premium">
       <div className="author-grid-premium">
-        <div className="author-photo-wrapper">
-          <img src={config.author.photo} alt={config.author.name} className="author-photo-premium" />
-        </div>
-        <div className="author-content">
-          <span className="author-label">Sobre o Autor</span>
+        <motion.div className="author-photo-wrapper" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={blurReveal}>
+          <img src={config.author.photo} alt="Autor" className="author-photo-premium" />
+        </motion.div>
+        <motion.div className="author-content" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <h2 className="author-name-premium">{config.author.name}</h2>
           <div className="author-bio-premium">
             {config.author.bioParagraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -175,8 +182,7 @@ export function TestimonialsSection({ config }: SectionProps) {
   if (!config.testimonials.items.length) return null;
   return (
     <section className="testimonials-section">
-      <h2>O que dizem os leitores</h2>
-      <div className="testimonials-grid">
+      <motion.div className="testimonials-grid" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
         {config.testimonials.items.map((item, index) => (
           <div key={index} className="testimonial-card-premium">
             <div className="stars">
@@ -185,7 +191,7 @@ export function TestimonialsSection({ config }: SectionProps) {
             <p className="testimonial-text">"{item.text}"</p>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -194,15 +200,14 @@ export function OfferSection({ config }: SectionProps) {
   return (
     <section id="oferta" className="offer-section-premium">
       <div className="offer-grid">
-        <div className="offer-image-col">
+        <motion.div className="offer-image-col" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={blurReveal}>
            <img src={config.hero.mockupImage || config.hero.coverImage} alt="Ebook mockup" className="offer-mockup" />
-        </div>
-        <div className="offer-box-premium">
+        </motion.div>
+        <motion.div className="offer-box-premium" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <h2 className="offer-title">{config.offer.title}</h2>
           <div className="offer-pricing">
-            <span className="old-price">{config.offer.oldPrice}</span>
+            <span className="old-price">De {config.offer.oldPrice} por apenas</span>
             <span className="new-price">{config.offer.price}</span>
-            <span className="payment-methods">Pagamento único via PIX ou Cartão</span>
           </div>
           <ul className="inclusions-list">
             {config.offer.inclusions.map((inc, i) => (
@@ -215,19 +220,20 @@ export function OfferSection({ config }: SectionProps) {
           <div className="guarantee-badge">
             <i className="fa-solid fa-shield-check"></i> {config.offer.guaranteeText}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 export function FaqSection({ config }: SectionProps) {
+  if (!config.faq || !config.faq.items.length) return null;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="faq-section-premium">
-      <h2>Perguntas Frequentes</h2>
-      <div className="faq-list">
+      <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>Perguntas Frequentes</motion.h2>
+      <motion.div className="faq-list" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
         {config.faq.items.map((item, index) => (
           <div key={index} className={`faq-item-premium ${openIndex === index ? 'active' : ''}`}>
             <button 
@@ -244,19 +250,24 @@ export function FaqSection({ config }: SectionProps) {
             )}
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
 
 export function FinalCTA({ config }: SectionProps) {
   return (
-    <section className="final-cta-section">
-      <div className="final-cta-content">
-        <img src={config.hero.mockupImage || config.hero.coverImage} alt="Ebook" className="cta-mockup" />
+    <section className="final-cta-section" style={{
+      backgroundImage: 'linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.9)), url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed'
+    }}>
+      <motion.div className="final-cta-content" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+        <img src={config.hero.mockupImage || config.hero.coverImage} alt="Ebook" className="cta-mockup float-animation" />
         <h2 className="cta-title">{config.finalCta.title}</h2>
         <a href="#oferta" className="btn-primary cta-button">{config.finalCta.buttonText}</a>
-      </div>
+      </motion.div>
     </section>
   );
 }

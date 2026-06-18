@@ -15,8 +15,12 @@ export interface EbookConfig {
     title: string;
     paragraphs: string[];
   };
-  imagine: {
+  imagine?: {
     title: string;
+    items: string[];
+  };
+  experience?: {
+    title?: string;
     items: string[];
   };
   discover: {
@@ -31,6 +35,10 @@ export interface EbookConfig {
       title: string;
       description: string;
     }[];
+  };
+  quote?: {
+    text: string;
+    author?: string;
   };
   gallery: {
     bookOpenImage?: string;
