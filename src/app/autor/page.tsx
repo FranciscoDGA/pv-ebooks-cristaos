@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { FiBookOpen, FiUser, FiMail, FiGlobe } from 'react-icons/fi';
 
 const fadeIn = {
@@ -98,20 +99,20 @@ export default function AuthorPage() {
               Ficou com dúvidas ou quer saber mais sobre meus livros? Estou à disposição!
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="mailto:contato@ochamadodagraca.com.br"
                 className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gold-500 text-dark-900 rounded-lg hover:bg-gold-400 transition-colors font-medium"
               >
                 <FiMail />
                 Enviar E-mail
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contato"
                 className="inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-gold-500 text-gold-500 rounded-lg hover:bg-gold-500 hover:text-dark-900 transition-colors font-medium"
               >
                 <FiUser />
                 Formulário de Contato
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

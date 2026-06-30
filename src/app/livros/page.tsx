@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BookCard } from '@/components/BookCard';
+import Link from 'next/link';
 import { FiArrowRight, FiSearch } from 'react-icons/fi';
 
-// Dados dos livros (pode ser movido para um arquivo de configuração)
+// Dados dos livros
 const allBooks = [
   {
     id: 1,
@@ -126,8 +126,32 @@ export default function BooksPage() {
               viewport={{ once: true }}
               variants={fadeIn}
               custom={index}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <BookCard {...book} />
+              <Link href={`/${book.slug}`} className="block">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={book.image}
+                    alt={book.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-dark-900 mb-2 line-clamp-2">
+                    {book.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                    {book.description}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gold-600 font-bold">{book.price}</span>
+                    <span className="text-gold-500 text-sm hover:text-gold-600 transition-colors flex items-center">
+                      Ver detalhes <FiArrowRight className="ml-1" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>

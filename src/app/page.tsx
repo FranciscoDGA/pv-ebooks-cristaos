@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiBookOpen, FiStar, FiUser, FiMail } from 'react-icons/fi';
 
-// Dados dos livros (pode ser movido para um arquivo de configuração)
+// Dados dos livros
 const featuredBooks = [
   {
     id: 1,
@@ -240,7 +240,7 @@ export default function Home() {
               Escolha um livro e comece sua jornada de fé hoje mesmo.
             </p>
             <Link
-              href="#livros"
+              href="/livros"
               className="inline-flex items-center justify-center px-8 py-4 bg-dark-900 text-white font-semibold rounded-lg hover:bg-dark-800 transition-colors text-lg"
             >
               Ver Todos os Livros
@@ -275,7 +275,6 @@ export default function Home() {
               <ul className="space-y-2">
                 <li><Link href="/privacidade" className="text-gray-400 hover:text-gold-400 transition-colors text-sm">Política de Privacidade</Link></li>
                 <li><Link href="/termos" className="text-gray-400 hover:text-gold-400 transition-colors text-sm">Termos de Uso</Link></li>
-                <li><Link href="/devolucao" className="text-gray-400 hover:text-gold-400 transition-colors text-sm">Política de Devolução</Link></li>
               </ul>
             </div>
             <div>

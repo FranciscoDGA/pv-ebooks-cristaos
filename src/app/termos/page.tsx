@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
