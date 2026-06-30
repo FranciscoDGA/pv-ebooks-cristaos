@@ -1,73 +1,115 @@
-# React + TypeScript + Vite
+# O Chamado da Graça - Editora Cristã Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um site moderno e minimalista para uma livraria cristã, construído com **Next.js 14**, **Tailwind CSS** e **TypeScript**.
 
-Currently, two official plugins are available:
+## 🚀 Começando
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Pré-requisitos
+- Node.js 18.17 ou superior
+- npm, yarn ou pnpm
 
-## React Compiler
+### Instalação
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/FranciscoDGA/pv-ebooks-cristaos.git
+   cd pv-ebooks-cristaos
+   ```
 
-## Expanding the ESLint configuration
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📁 Estrutura do Projeto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+pv-ebooks-cristaos/
+├── src/
+│   ├── app/
+│   │   ├── globals.css       # Estilos globais
+│   │   ├── layout.tsx        # Layout principal
+│   │   ├── page.tsx          # Página inicial
+│   │   ├── livros/
+│   │   │   └── page.tsx      # Página de livros
+│   │   ├── autor/
+│   │   │   └── page.tsx      # Página do autor
+│   │   ├── contato/
+│   │   │   └── page.tsx      # Página de contato
+│   │   ├── privacidade/
+│   │   │   └── page.tsx      # Política de privacidade
+│   │   ├── termos/
+│   │   │   └── page.tsx      # Termos de uso
+│   │   └── not-found.tsx     # Página 404
+│   ├── components/
+│   │   ├── Button.tsx        # Componente de botão
+│   │   └── BookCard.tsx      # Cartão de livro
+│   └── public/
+│       └── images/           # Imagens do site
+├── package.json
+├── next.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Design
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Paleta de Cores
+| Cor | Uso | Código |
+|-----|-----|--------|
+| Branco | Fundo | `#FFFFFF` |
+| Preto | Textos | `#1A1A1A` |
+| Azul Escuro | Títulos/Destaques | `#2C3E50` |
+| Dourado | Acentos (botões, links) | `#D4AF37` |
+| Cinza Claro | Fundos de seções | `#F8F9FA` |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Fontes
+- **Títulos**: Playfair Display
+- **Textos**: Inter
+
+## 🔧 Configuração
+
+### Variáveis de Ambiente
+Crie um arquivo `.env.local` na raiz do projeto para configurações sensíveis:
+
+```env
+NEXT_PUBLIC_API_URL=https://api.example.com
 ```
+
+### Tailwind CSS
+O projeto usa Tailwind CSS para estilização. Para personalizar as cores e fontes, edite o arquivo `tailwind.config.ts`.
+
+## 📦 Dependências
+
+- **Next.js**: Framework React para produção
+- **Tailwind CSS**: Utility-first CSS framework
+- **Framer Motion**: Animações suaves
+- **React Icons**: Ícones para React
+- **React Markdown**: Renderização de Markdown
+
+## 🛠 Scripts Disponíveis
+
+| Script | Descrição |
+|--------|-------------|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Compila o projeto para produção |
+| `npm run start` | Inicia o servidor de produção |
+| `npm run lint` | Executa o linter |
+
+## 📄 Licença
+
+Este projeto é privado e pertence à Editora O Chamado da Graça.
+
+## 📬 Contato
+
+Para mais informações, entre em contato:
+- E-mail: contato@ochamadodagraca.com.br
+- Site: [https://pv-ebooks-cristaos-id6r.vercel.app/](https://pv-ebooks-cristaos-id6r.vercel.app/)
