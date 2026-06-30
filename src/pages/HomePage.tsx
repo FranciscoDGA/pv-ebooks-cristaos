@@ -31,19 +31,7 @@ export function HomePage() {
         <title>O Chamado da Graça | Editora Cristã Digital</title>
         <meta name="description" content="Uma biblioteca digital cristã criada para transformar conhecimento bíblico em prática e fortalecer sua caminhada com Deus." />
       </Helmet>
-      {/* BANNER DE TESTE - DEPLOY ATUALIZADO */}
-      <div style={{
-        background: "#ff0000",
-        color: "#ffffff",
-        padding: "20px",
-        textAlign: "center",
-        fontSize: "24px",
-        fontWeight: "bold",
-        marginBottom: "20px",
-        border: "4px solid #ffff00",
-        boxShadow: "0 0 20px rgba(255, 0, 0, 0.8)",
       }}>
-        ⚠️ DEPLOY ATUALIZADO! (Teste visual - FranciscoDGA) ⚠️
       </div>
 
       {/* SECTION 1: HERO EDITORIAL */}
